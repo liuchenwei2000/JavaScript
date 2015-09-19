@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- 
+按照惯例，所有 <script> 元素都应该放在页面的 <head> 元素中。 
+
+这样做的目的是把所有外部文件（包括CSS文件和JavaScript文件）的引用都放在相同的地方。
+但这意味着必须等到全部 JavaScript 代码都被下载、解析和执行完成以后，才能开始呈现页面的内容（浏览器在遇到<body>标签时才开始呈现内容）。
+对于那些需要很多 JavaScript 代码的页面来说，这无疑会导致浏览器在呈现页面时出现明显的延迟，而延迟期间的浏览器窗口中将是一片空白。
+为了避免这个问题，现代 Web 应用程序一般都把全部 JavaScript 引用放在 <body> 元素中页面的内容后面。
+这样， 在解析包含的 JavaScript 代码之前，页面的内容将完全呈现在浏览器中。
+-->
+</head>
+<body>
+<div id="result" style="color:green"></div>
+<script type="text/javascript" src="test.JavaScript"></script>
+<script type="text/javascript" src="http://www.google.com/JavaScript/jquery.js"></script>
+</body>
+</html>
