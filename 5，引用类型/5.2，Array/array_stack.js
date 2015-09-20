@@ -11,15 +11,15 @@
 
 var colors = [];
 var length = colors.push("red", "blue");
-log("now colors length=" + length);
+console.log("now colors length=" + length);
 
 length = colors.push("yellow");
-log("now colors length=" + length);
-log("now colors=" + colors);
+console.log("now colors length=" + length);
+console.log("now colors=" + colors);
 
 var item = colors.pop();
-log("colors.pop()=" + item);
-log("now colors length=" + colors.length);
+console.log("colors.pop()=" + item);
+console.log("now colors length=" + colors.length);
 
 
 // 2，队列方法
@@ -34,9 +34,9 @@ log("now colors length=" + colors.length);
  */
 
 item = colors.shift();
-log("colors.shift()=" + item);
-log("now colors length=" + colors.length);
+console.log("colors.shift()=" + item);
+console.log("now colors length=" + colors.length);
 
 length = colors.unshift("pink", "orange");
-log("now colors length=" + colors.length);
-log("now colors=" + colors);
+console.log("now colors length=" + colors.length);
+console.log("now colors=" + colors);

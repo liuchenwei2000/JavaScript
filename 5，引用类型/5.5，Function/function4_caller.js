@@ -11,9 +11,9 @@ function outer() {
 
 function inner(){
 	// 这里会显示调用 inner() 的函数源代码
-	log("caller=" + inner.caller);
+	console.log("caller=" + inner.caller);
 	// 如果想更松散的耦合，可以采用下面的写法
-	log("arguments.callee.caller=" + arguments.callee.caller);
+	console.log("arguments.callee.caller=" + arguments.callee.caller);
 }
 
 outer();

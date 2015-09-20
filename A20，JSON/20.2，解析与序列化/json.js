@@ -22,11 +22,11 @@ var book = {
  */
 var jsonText = JSON.stringify(book);
 
-log("jsonText=" + jsonText);
+console.log("jsonText=" + jsonText);
 
 // 将JSON字符串直接传递给JSON.parse()就可以得到相应的JavaScript值。
 // 虽然 book 和 bookCopy 具有相同的属性，但它们是独立的、没有任何关系的对象。
 var bookCopy = JSON.parse(jsonText); 
-log("bookCopy.title=" + bookCopy.title);
+console.log("bookCopy.title=" + bookCopy.title);
 
-log("book === bookCopy ? " + (book === bookCopy));
+console.log("book === bookCopy ? " + (book === bookCopy));

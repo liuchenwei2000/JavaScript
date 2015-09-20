@@ -19,14 +19,14 @@ function add10(num){
 
 // 要访问函数的指针而不执行函数的话，必须去掉函数名后面的那对圆括号。因此这里传入的是 add10
 var result = callSomeFucntion(add10, 1);
-log("callSomeFucntion(add10, 1)=" + result);
+console.log("callSomeFucntion(add10, 1)=" + result);
 
 var greeting = function(name) {
 	return "Hello " + name;
 }; 
 
 result = callSomeFucntion(greeting, " world");
-log("callSomeFucntion(greeting, \" world\")=" + result);
+console.log("callSomeFucntion(greeting, \" world\")=" + result);
 
 // 2，函数作为返回结果使用
 // 可以从一个函数中返回另一个函数，而且这也是极为有用的一种技术。
@@ -58,7 +58,7 @@ var people = [ {
 } ];
 
 people.sort(createComparisonFunction("age"));
-log("people sorted by age=" + people);
+console.log("people sorted by age=" + people);
 
 people.sort(createComparisonFunction("salary"));
-log("people sorted by salary=" + people);
+console.log("people sorted by salary=" + people);

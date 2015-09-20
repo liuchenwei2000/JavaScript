@@ -13,7 +13,7 @@
 
 var array1 = [ "1", "2" ];
 if (Array.isArray(array1)) {
-	log("array1 is an array.");
+	console.log("array1 is an array.");
 }
 
 
@@ -26,15 +26,15 @@ if (Array.isArray(array1)) {
  */
 
 var colors = [ "red", "green", "yellow" ];
-log("colors.toString()=" + colors.toString());
-log("colors.valueOf()=" + colors.valueOf());// valueOf() 返回的还是数组
-log("colors=" + colors);// 后台默认调用对象的 toString() 方法
+console.log("colors.toString()=" + colors.toString());
+console.log("colors.valueOf()=" + colors.valueOf());// valueOf() 返回的还是数组
+console.log("colors=" + colors);// 后台默认调用对象的 toString() 方法
 
 // 数组继承的 toLocaleString()、toString()和 valueOf() 方法，在默认情况下都会以逗号分隔的字符串的形式返回数组项，
 // 而使用 join() 方法，则可以使用不同的分隔符来构建这个字符串。 join() 方法只接收一个参数，即用作分隔符的字符串，然后返回包含所有数组项的字符串。
-log('colors.join(".")=' + colors.join("."));
-log('colors.join("|")=' + colors.join("|"));
+console.log('colors.join(".")=' + colors.join("."));
+console.log('colors.join("|")=' + colors.join("|"));
 
 // 如果数组中的某一项的值是 null 或者 undefined，那么该值的在 join()、toString()和 toLocaleString()方法返回的结果中以空字符串表示。
 var array2 = [ "a", "b", null, "d", undefined, "f" ];
-log("array2.toString()=" + array2.toString());
+console.log("array2.toString()=" + array2.toString());

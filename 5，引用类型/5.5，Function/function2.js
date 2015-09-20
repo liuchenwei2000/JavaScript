@@ -13,7 +13,7 @@
 // 在代码开始执行之前，解析器就已经通过一个名为函数声明提升的过程，读取并将函数声明添加到执行环境中。
 // 对代码求值时，JavaScript 引擎在第一遍会声明函数并将它们放到源代码树的顶部。
 // 所以，即使声明函数的代码在调用它的代码后面，JavaScript 引擎也能把函数声明提升到顶部。
-log("sum(1,2)=" + sum(1,2));
+console.log("sum(1,2)=" + sum(1,2));
 
 function sum(num1, num2) {
 	return num1 + num2;
@@ -21,7 +21,7 @@ function sum(num1, num2) {
 
 // 下面的代码会产生运行时错误，原因是：
 // 函数位于一个初始化语句中，而不是一个函数声明。换句话说，在执行到函数所在的语句之前，变量 sum2 中不会保存对函数的引用。
-log("sum2(1,2)=" + sum2(1,2));
+console.log("sum2(1,2)=" + sum2(1,2));
 
 var sum2 = function(num1, num2) {
 	return num1 + num2;

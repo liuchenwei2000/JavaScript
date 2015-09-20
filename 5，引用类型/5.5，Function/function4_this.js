@@ -15,7 +15,7 @@ var mine = {
 function sayColor() {
 	// sayColor() 是在全局作用域中定义的，它引用了 this 对象。
 	// 由于在调用函数之前， this 的值并不确定，因此 this 可能会在代码执行过程中引用不同的对象。
-	log("color=" + this.color);
+	console.log("color=" + this.color);
 }
 
 sayColor();// 在全局作用域中调用 sayColor()，this引用的是全局对象 window

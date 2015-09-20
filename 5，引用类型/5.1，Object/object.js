@@ -7,7 +7,7 @@ var person = new Object();
 person.name = "Tom";
 person.age = 15;
 
-log(person.name + " " + person.age);
+console.log(person.name + " " + person.age);
 
 // 另一种是使用对象字面量表示法，这是对象定义的一种简写方式，目的在于简化创建包含大量属性的对象的过程。
 var person2 = {
@@ -16,14 +16,14 @@ var person2 = {
 	living : true	// living 是最后一个属性，所以不需要加逗号
 };
 
-log(person2.name + " " + person2.age);
+console.log(person2.name + " " + person2.age);
 
 // 也可以像下面这种用法
 var person3 = {};	// 与 new Object(); 相同
 person3.name = "Ann";
 person3.age = 14;
 
-log(person3.name + " " + person3.age);
+console.log(person3.name + " " + person3.age);
 
 // 2，访问属性
 
@@ -34,15 +34,15 @@ log(person3.name + " " + person3.age);
  * 除非必须使用变量来访问属性，否则建议使用点表示法。
  */ 
 
-log(person.name);
-log(person["name"]);
+console.log(person.name);
+console.log(person["name"]);
 
 // 方括号语法的主要优点是可以通过变量来访问属性。
 var prop = "age";
-log(person[prop]);
+console.log(person[prop]);
 
 // 如果属性名中包含会导致语法错误的字符，或者属性名使用的关键字或保留字，也可以使用方括号表示法。
 var person4 = {
 	"first name" : "Jimmy"
 };
-log(person4["first name"]);
+console.log(person4["first name"]);

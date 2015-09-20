@@ -13,10 +13,10 @@
  */ 
 
 var number1 = [ 1, 2, 3, 4, 5 ];
-log("number1=" + number1);
+console.log("number1=" + number1);
 
 // 数组求和
 var sum = number1.reduce(function(prev, cur, index, array) {
 	return prev + cur;
 });
-log("sum=" + sum);
+console.log("sum=" + sum);

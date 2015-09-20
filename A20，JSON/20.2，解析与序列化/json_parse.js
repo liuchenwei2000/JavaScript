@@ -19,7 +19,7 @@ var book = {
 };
 
 var jsonText = JSON.stringify(book);
-log("jsonText=" + jsonText);
+console.log("jsonText=" + jsonText);
 
 var bookCopy = JSON.parse(jsonText, function(key,value){
 	if("releaseDate" == key) {
@@ -28,4 +28,4 @@ var bookCopy = JSON.parse(jsonText, function(key,value){
 		return value;
 	}
 }); 
-log("bookCopy.releaseDate.getFullYear()=" + bookCopy.releaseDate.getFullYear());
+console.log("bookCopy.releaseDate.getFullYear()=" + bookCopy.releaseDate.getFullYear());

@@ -16,17 +16,17 @@
  */ 
 
 var number1 = [ 1, 2, 3, 4, 5, 4, 3, 2, 1 ];
-log("number1=" + number1);
+console.log("number1=" + number1);
 
 var everyResult = number1.every(function(item, index, array) {
 	return item > 2;
 });
-log("everyResult=" + everyResult);
+console.log("everyResult=" + everyResult);
 
 var someResult = number1.some(function(item, index, array) {
 	return item > 2;
 });
-log("someResult=" + someResult);
+console.log("someResult=" + someResult);
 
 
 /**
@@ -37,7 +37,7 @@ log("someResult=" + someResult);
 var filterResult = number1.filter(function(item, index, array) {
 	return item > 2;
 });
-log("filterResult=" + filterResult);
+console.log("filterResult=" + filterResult);
 
 /**
  * map()：对数组中的每一项运行给定函数，返回每次函数调用的结果组成的数组。
@@ -48,7 +48,7 @@ log("filterResult=" + filterResult);
 var mapResult = number1.map(function(item, index, array) {
 	return item * 2;
 });
-log("mapResult=" + mapResult);
+console.log("mapResult=" + mapResult);
 
 /**
  * forEach()：对数组中的每一项运行给定函数，没有返回值。

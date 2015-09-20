@@ -16,7 +16,7 @@ function factorial(num) {
 	}
 }
 
-log("factorial(5)=" + factorial(5));
+console.log("factorial(5)=" + factorial(5));
 
 // 下面的使用方式会出现计算错误
 var factorial2 = factorial;
@@ -25,7 +25,7 @@ factorial = function() {
 	return 0;
 };
 
-log("factorial2(5)=" + factorial2(5));
+console.log("factorial2(5)=" + factorial2(5));
 
 // 使用  arguments.callee 可以避免上述问题
 function trueFactorial(num) {
@@ -38,7 +38,7 @@ function trueFactorial(num) {
 	}
 }
 
-log("trueFactorial(5)=" + trueFactorial(5));
+console.log("trueFactorial(5)=" + trueFactorial(5));
 
 // 下面的使用方式会出现计算错误
 var factorial3 = trueFactorial;
@@ -47,4 +47,4 @@ trueFactorial = function() {
 	return 0;
 };
 
-log("factorial3(5)=" + factorial3(5));
+console.log("factorial3(5)=" + factorial3(5));

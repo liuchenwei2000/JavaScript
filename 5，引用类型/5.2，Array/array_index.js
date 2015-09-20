@@ -9,11 +9,11 @@
 
 var number1 = [ 1, 2, 3, 4, 5, 4, 3, 2, 1 ];
 
-log("number1=" + number1);
-log("number1.indexOf(4)=" + number1.indexOf(4));
-log("number1.lastIndexOf(4)=" + number1.lastIndexOf(4));
-log("number1.indexOf(4,4)=" + number1.indexOf(4, 4));
-log("number1.lastIndexOf(4,4)=" + number1.lastIndexOf(4, 4));
+console.log("number1=" + number1);
+console.log("number1.indexOf(4)=" + number1.indexOf(4));
+console.log("number1.lastIndexOf(4)=" + number1.lastIndexOf(4));
+console.log("number1.indexOf(4,4)=" + number1.indexOf(4, 4));
+console.log("number1.lastIndexOf(4,4)=" + number1.lastIndexOf(4, 4));
 
 // 在比较参数和元素相等性的时候，会使用全等操作符（===）。
 
@@ -27,5 +27,5 @@ var people1 = [ {
 
 var people2 = [ person ];
 
-log("people1.indexOf(person)=" + people1.indexOf(person));
-log("people2.indexOf(person)=" + people2.indexOf(person));
+console.log("people1.indexOf(person)=" + people1.indexOf(person));
+console.log("people2.indexOf(person)=" + people2.indexOf(person));

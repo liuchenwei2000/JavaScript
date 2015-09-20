@@ -20,6 +20,6 @@ function say(what) {
 function add(num1,num2) {
 }
 
-log("sayHi.length=" + sayHi.length);
-log("say.length=" + say.length);
-log("add.length=" + add.length);
+console.log("sayHi.length=" + sayHi.length);
+console.log("say.length=" + say.length);
+console.log("add.length=" + add.length);

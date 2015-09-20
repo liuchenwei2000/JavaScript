@@ -13,8 +13,8 @@
 var colors = [ "red", "green", "yellow" ];
 var colors2 = colors.concat("blue", [ "orange", "pink" ]);
 
-log("colors=" + colors);
-log("colors2=" + colors2);
+console.log("colors=" + colors);
+console.log("colors2=" + colors2);
 
 
 /**
@@ -30,9 +30,9 @@ var array1 = [ "a", "b", "c", "d", "e", "f", "g" ];
 var array2 = array1.slice(2);
 var array3 = array1.slice(2, 5);
 
-log("array1=" + array1);
-log("array1.slice(2)=" + array2);
-log("array1.slice(2, 5)=" + array3);
+console.log("array1=" + array1);
+console.log("array1.slice(2)=" + array2);
+console.log("array1.slice(2, 5)=" + array3);
 
 
 /**
@@ -53,13 +53,13 @@ log("array1.slice(2, 5)=" + array3);
  */ 
 
 var numbers = [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ];
-log("numbers=" + numbers);
+console.log("numbers=" + numbers);
 
 var removed = numbers.splice(0, 1);// 删除第一项
-log("removed=" + removed);
+console.log("removed=" + removed);
 
 numbers.splice(1, 0, 9999, 8888);// 插入两项
-log("numbers=" + numbers);
+console.log("numbers=" + numbers);
 
 numbers.splice(5, 2, 111, 222, 333);// 删除两项，插入三项
-log("numbers=" + numbers);
+console.log("numbers=" + numbers);
