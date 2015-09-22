@@ -19,10 +19,11 @@ var div = 11 / 2;
 var mod = 11 % 2; // 求模
 
 // 还可以使用简化的操作
-var n1 += 1;
-var n2 -= 1;
-var n3 *= 1;
-var n4 /= 1;
+var n = 100;
+n += 1;// n = n + 1;
+n -= 1;
+n *= 1;
+n /= 1;
 
 var num1 = a++;// 自增
 var num2 = ++a;

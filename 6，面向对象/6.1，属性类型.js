@@ -39,7 +39,7 @@ var person2 = {};
 // 定义 person2 的 name 属性不可修改，且值为 Tom
 Object.defineProperty(person2, "name", {
 	writable : false,
-	value : "Tom"
+	value : "Tom"                                                                                                                                                                                                                                                                                                                                    
 });
 
 console.log("person2.name=" + person2.name);
@@ -111,13 +111,54 @@ console.log("person4.age=" + person4.age);
 
 // 不一定非要同时指定 getter 和 setter，只指定 getter 意味着属性是不可写入的，尝试写入属性会被忽略。
 
+/**
+ * 使用 Object.defineProperties() 方法定义多个属性性质
+ * 
+ * 该方法可以通过描述符一次定义多个属性。它接收两个对象参数：
+ * 第一个对象是要添加和修改其属性的对象，第二个对象的属性与第一个对象中要添加或修改的属性一一对应。
+ */
+
+var book = {};
+
+// 在 book 对象上定义了两个数据属性（_year 和 edition）和一个访问器属性（year）。
+Object.defineProperties(book, {
+	_year : {
+		value : "2015"
+	},
+	
+	edition : {
+		value : 1
+	},
+	
+	year : {
+		get : function() {
+			return this._year;
+		},
+		set : function(newValue) {
+			this._year = newValue;
+			this.edition = 2015 - newValue;
+		}
+	}
+});
 
 
+/**
+ * 读取属性的性质
+ * 
+ * 通过 Object.getOwnPropertyDescriptor() 方法，可以取得给定属性的描述符。
+ * 该方法接收两个参数：属性所在的对象和要读取其描述符的属性名称。
+ * 返回值是一个对象，如果是访问器属性，这个对象的属性有 configurable、enumerable、get 和 set。；
+ * 如果是数据属性，这个对象的属性有 configurable、enumerable、writable 和 value。
+ */
 
+var _yearDescriptor = Object.getOwnPropertyDescriptor(book, "_year");
+console.log("_year.configurable=" + _yearDescriptor.configurable);
+console.log("_year.enumerable=" + _yearDescriptor.enumerable);
+console.log("_year.writable=" + _yearDescriptor.writable);
+console.log("_year.value=" + _yearDescriptor.value);
 
-
-
-
-
-
-
+var yearDescriptor = Object.getOwnPropertyDescriptor(book, "year");
+console.log("year.configurable=" + yearDescriptor.configurable);
+console.log("year.enumerable=" + yearDescriptor.enumerable);
+console.log("year.get=" + yearDescriptor.get);
+console.log("year.set=" + yearDescriptor.set);
