@@ -1,0 +1,27 @@
+<!-- HTML DOM 使 JavaScript 有能力对 HTML 事件做出反应。 -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			function changetext(id) {
+				id.innerHTML = "谢谢!";
+			}
+		</script>
+	</head>
+	<body>
+	    <!--
+		可以在事件发生时执行 JavaScript。
+		比如当用户在 HTML 元素上点击时，向一个 HTML 事件属性添加 JavaScript 代码：
+		    onclick=JavaScript
+		-->
+		<!-- 可以直接写 JavaScript 代码 -->
+		<h1 onclick="this.innerHTML='谢谢!'">
+			请点击该文本
+		</h1>
+		<!-- 也可以调用 JavaScript 函数 -->
+		<h1 onclick="changetext(this)">
+			请点击该文本
+		</h1>
+	</body>
+
+</html>

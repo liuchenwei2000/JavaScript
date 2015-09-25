@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" charset="utf-8">
+<head>
+<script src="operate_node.js"></script>
+</head>
+<body>
+	<div id="div1" style="border: solid">
+		<p style="color: red">这是第一个段落。</p>
+		<p style="color: green">这是第二个段落。</p>
+		<p style="color: blue">这是第三个段落。</p>
+		<p style="color: pink">这是第四个段落。</p>
+	</div>
+	<div id="div_p">
+		<p style="color: orange">这是独立的段落。</p>
+	</div>
+	<div id="div2" style="border: solid">
+		<p style="color: red">RED</p>
+		<p style="color: green">GREEN</p>
+		<p style="color: blue">BLUE</p>
+	</div>
+	<p></p>
+	<button onclick="testAppendChild()">div1.appendChild()</button>
+	&nbsp;&nbsp;
+	<button onclick="testAppendChild2()">div1 first to last</button>
+	&nbsp;&nbsp;
+	<button onclick="testInsertBefore()">div2.insertBefore()</button>
+	&nbsp;&nbsp;
+	<button onclick="testReplaceChild()">div_p.replaceChild()</button>
+	&nbsp;&nbsp;
+	<button onclick="testRemoveChild()">div1.removeChild()</button>
+</body>
+</html>

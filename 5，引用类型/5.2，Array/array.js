@@ -25,7 +25,7 @@ console.log("array5.length=" + array5.length);
 var array6 = [ "a", "b", "c", "d" ];
 console.log("array6.length=" + array6.length);
 
-//2，存取属性
+// 2，存取属性
 
 // 在读取和设置数组的元素值时，要使用方括号并提供相应值得数字索引（基于0）。
 var colors = [ "red", "green", "yellow" ];
@@ -55,3 +55,21 @@ console.log("names[4]=" + names[4]);
 names[99] = "100";
 console.log("names.length=" + names.length);
 console.log("names[98]=" + names[98]);// 但不存在的元素值全部都是 undefined
+
+
+// 3，遍历数组
+
+var mycars = new Array();
+mycars[0] = "Saab";
+mycars[1] = "Volvo";
+mycars[2] = "BMW";
+
+// 第一种方式
+for (i = 0; i < mycars.length; i++) {
+	console.log(mycars[i]);
+}
+
+// 第二种方式，for-in循环
+for (var x in mycars) {
+	console.log(mycars[x])
+}

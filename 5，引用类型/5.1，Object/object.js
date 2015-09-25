@@ -43,6 +43,12 @@ console.log(person[prop]);
 
 // 如果属性名中包含会导致语法错误的字符，或者属性名使用的关键字或保留字，也可以使用方括号表示法。
 var person4 = {
-	"first name" : "Jimmy"
+	"first name" : "Jimmy",
+	"last name" : "Green"
 };
 console.log(person4["first name"]);
+
+// for...in 语句循环遍历对象的属性，循环中的代码块将针对每个属性执行一次。
+for ( var prop in person4) {
+	console.log("person[" + prop + "]=" + person4[prop]);
+}
