@@ -5,7 +5,7 @@
 
 // 1，documentElement 属性始终指向 HTML 页面中的 <html> 元素。
 
-var html = document.documentElement;
+var html = document.documentElement; 
 
 console.log("html === document.firstChild ? " + (html === document.firstChild));// true
 console.log("html === document.childNodes[0] ? " + (html === document.childNodes[0]));// true
