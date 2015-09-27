@@ -56,6 +56,9 @@ names[99] = "100";
 console.log("names.length=" + names.length);
 console.log("names[98]=" + names[98]);// 但不存在的元素值全部都是 undefined
 
+// 将数组清空的一个有效方法，就是将 length 属性设为0。
+names.length = 0;
+console.log("names.length=" + names.length);
 
 // 3，遍历数组
 

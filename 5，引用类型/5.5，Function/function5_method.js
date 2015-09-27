@@ -54,3 +54,6 @@ sayColor();
 sayColor.apply(this);
 sayColor.apply(window);
 sayColor.apply(mine);
+
+// 函数的toString方法返回函数的源码
+console.console.log("sum.toString()=" + sum.toString());

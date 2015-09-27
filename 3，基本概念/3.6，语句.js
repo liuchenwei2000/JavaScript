@@ -205,3 +205,33 @@ default:
 	console.log("num > 20");
 }
 
+/*
+ * switch结构不利于代码重用，往往可以用对象形式重写。
+ */
+
+var fruit = "banana";
+
+switch (fruit) {
+case "banana":
+	console.log("Monkey like it");
+	break;
+case "apple":
+	console.log("I like it");
+	break;
+default:
+	console.log("nothing");
+}
+
+var fruits = {
+	banana : function() {
+		console.log("Monkey like it");
+	},
+	apple : function() {
+		console.log("I like it");
+	},
+	"default" : function() {
+		console.log("nothing");
+	}
+};
+
+fruits[fruit]();

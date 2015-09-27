@@ -46,3 +46,25 @@ add2 = function(num1, num2) {
 };
 
 // 由此可见函数没有重载。
+
+
+// 5，一等公民
+/*
+ * JavaScript 的函数与其他数据类型处于同等地位，可以使用其他数据类型的地方就能使用函数。
+ * 比如，可以把函数赋值给变量或对象的属性，也可以当作参数传入其他函数，或者作为函数的结果返回。
+ * 这表示函数与其他数据类型的地方是平等，所以又称函数为一等公民。
+ */
+
+function add(x, y) {
+	return x + y;
+}
+
+// 将函数赋值给一个变量
+var operator = add;
+console.log("operator(1, 2)=" + operator(1, 2));
+
+// 将函数作为参数和返回值
+function run(func) {
+	return func;
+}
+console.log("run(add)(1, 1)=" + run(add)(1, 1));
