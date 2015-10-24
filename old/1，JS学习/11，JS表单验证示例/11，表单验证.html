@@ -1,17 +1,17 @@
-<!-- JavaScript å¯ç”¨æ¥åœ¨æ•°æ®è¢«é€å¾€æœåŠ¡å™¨å‰å¯¹ HTML è¡¨å•ä¸­çš„è¿™äº›è¾“å…¥æ•°æ®è¿›è¡ŒéªŒè¯ã€‚ 
-è¢« JavaScript éªŒè¯çš„å…¸åž‹çš„è¡¨å•æ•°æ®æœ‰ï¼š
-ç”¨æˆ·æ˜¯å¦å·²å¡«å†™è¡¨å•ä¸­çš„å¿…å¡«é¡¹ç›®ï¼Ÿ
-ç”¨æˆ·è¾“å…¥çš„é‚®ä»¶åœ°å€æ˜¯å¦åˆæ³•ï¼Ÿ
-ç”¨æˆ·æ˜¯å¦å·²è¾“å…¥åˆæ³•çš„æ—¥æœŸï¼Ÿ
-ç”¨æˆ·æ˜¯å¦åœ¨æ•°æ®åŸŸ (numeric field) ä¸­è¾“å…¥äº†æ–‡æœ¬ï¼Ÿ
+<!-- JavaScript ¿ÉÓÃÀ´ÔÚÊý¾Ý±»ËÍÍù·þÎñÆ÷Ç°¶Ô HTML ±íµ¥ÖÐµÄÕâÐ©ÊäÈëÊý¾Ý½øÐÐÑéÖ¤¡£ 
+±» JavaScript ÑéÖ¤µÄµäÐÍµÄ±íµ¥Êý¾ÝÓÐ£º
+ÓÃ»§ÊÇ·ñÒÑÌîÐ´±íµ¥ÖÐµÄ±ØÌîÏîÄ¿£¿
+ÓÃ»§ÊäÈëµÄÓÊ¼þµØÖ·ÊÇ·ñºÏ·¨£¿
+ÓÃ»§ÊÇ·ñÒÑÊäÈëºÏ·¨µÄÈÕÆÚ£¿
+ÓÃ»§ÊÇ·ñÔÚÊý¾ÝÓò (numeric field) ÖÐÊäÈëÁËÎÄ±¾£¿
 -->
 <!DOCTYPE html>
 <html>
 	<head>
 		<script>
 		    /*
-			ä¸‹é¢çš„å‡½æ•°ç”¨æ¥æ£€æŸ¥ç”¨æˆ·æ˜¯å¦å·²å¡«å†™è¡¨å•ä¸­çš„å¿…å¡«ï¼ˆæˆ–å¿…é€‰ï¼‰é¡¹ç›®ã€‚
-			å‡å¦‚å¿…å¡«æˆ–å¿…é€‰é¡¹ä¸ºç©ºï¼Œé‚£ä¹ˆè­¦å‘Šæ¡†ä¼šå¼¹å‡ºï¼Œå¹¶ä¸”å‡½æ•°çš„è¿”å›žå€¼ä¸º falseï¼Œå¦åˆ™å‡½æ•°çš„è¿”å›žå€¼åˆ™ä¸º trueã€‚
+			ÏÂÃæµÄº¯ÊýÓÃÀ´¼ì²éÓÃ»§ÊÇ·ñÒÑÌîÐ´±íµ¥ÖÐµÄ±ØÌî£¨»ò±ØÑ¡£©ÏîÄ¿¡£
+			¼ÙÈç±ØÌî»ò±ØÑ¡ÏîÎª¿Õ£¬ÄÇÃ´¾¯¸æ¿ò»áµ¯³ö£¬²¢ÇÒº¯ÊýµÄ·µ»ØÖµÎª false£¬·ñÔòº¯ÊýµÄ·µ»ØÖµÔòÎª true¡£
 			*/
 			function validate_required(field, alerttxt) {
 				if (field.value == null || field.value == "") {
@@ -31,7 +31,7 @@
 		</script>
 	</head>
 	<body>
-	    <!-- onSubmit äº‹ä»¶ä¼šåœ¨è¡¨å•ä¸­çš„ç¡®è®¤æŒ‰é’®è¢«ç‚¹å‡»æ—¶å‘ç”Ÿï¼Œå½“å®ƒè¿”å›ž true æ—¶æ‰ä¼šæ‰§è¡Œ action åŠ¨ä½œ -->
+	    <!-- onSubmit ÊÂ¼þ»áÔÚ±íµ¥ÖÐµÄÈ·ÈÏ°´Å¥±»µã»÷Ê±·¢Éú£¬µ±Ëü·µ»Ø true Ê±²Å»áÖ´ÐÐ action ¶¯×÷ -->
 		<form action="submitpage.html" onSubmit="return validate_form(this)" method="post">
 			Email:
 			<input type="text" name="email" size="30">

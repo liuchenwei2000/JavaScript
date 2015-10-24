@@ -2,18 +2,18 @@
 <html>
 <head>
 <!-- 
-使用 <script> 元素的方式有两种：直接在页面中嵌入 JavaScript 代码、包含外部 JavaScript 文件。 
+ʹ�� <script> Ԫ�صķ�ʽ�����֣�ֱ����ҳ����Ƕ�� JavaScript ���롢�����ⲿ JavaScript �ļ��� 
 
-无论以何种方式包含代码，只要不存在 defer 和 async 属性，浏览器都会按照 <script> 元素在页面中出现的先后顺序对它们依次进行解析。
-换句话说，在第一个 <script> 元素包含的代码解析完成后，第二个 <script> 包含的代码才会被解析。
+�����Ժ��ַ�ʽ�������룬ֻҪ������ defer �� async ���ԣ���������ᰴ�� <script> Ԫ����ҳ���г��ֵ��Ⱥ�˳����������ν��н�����
+���仰˵���ڵ�һ�� <script> Ԫ�ذ����Ĵ��������ɺ󣬵ڶ��� <script> �����Ĵ���Żᱻ������
 -->
 
 <!-- 
-1，直接在页面中嵌入 JavaScript 代码 
+1��ֱ����ҳ����Ƕ�� JavaScript ���� 
 
-包含在 <script> 元素内部的 JavaScript 代码将被从上至下依次解释。
-本例中解释器会解释到一个函数的定义，然后将该定义保存在自己的环境当中。
-在解释器对 <script> 元素内部的所有代码求值完毕以前，页面中的其余内容都不会被浏览器加载或显示。
+������ <script> Ԫ���ڲ��� JavaScript ���뽫�������������ν��͡�
+�����н���������͵�һ�������Ķ��壬Ȼ�󽫸ö��屣�����Լ��Ļ������С�
+�ڽ������� <script> Ԫ���ڲ������д�����ֵ�����ǰ��ҳ���е��������ݶ����ᱻ��������ػ���ʾ��
 -->
 <script type="text/javascript">
 	function sayHello(){
@@ -22,19 +22,19 @@
 </script>
 
 <!-- 
-2，包含外部 JavaScript 文件 
+2�������ⲿ JavaScript �ļ� 
 
-这种情况下，src 属性是必须的，它的值指向外部 JavaScript 文件的链接。
-与解析嵌入式 JavaScript 代码一样，在解析外部 JavaScript 文件（包括下载该文件）时，页面的处理也会暂时停止。
+��������£�src �����Ǳ���ģ�����ֵָ���ⲿ JavaScript �ļ������ӡ�
+�����Ƕ��ʽ JavaScript ����һ�����ڽ����ⲿ JavaScript �ļ����������ظ��ļ���ʱ��ҳ��Ĵ���Ҳ����ʱֹͣ��
 
-按照惯例，外部 JavaScript 文件带有 .js 扩展名，但这个扩展名不是必需的，因为浏览器不会检查。
-这样一来，使用 JSP 或其他服务器端语言动态生成  JavaScript 代码也就成为了可能。
+���չ������ⲿ JavaScript �ļ����� .js ��չ�����������չ�����Ǳ���ģ���Ϊ����������顣
+����һ����ʹ�� JSP �����������������Զ�̬����  JavaScript ����Ҳ�ͳ�Ϊ�˿��ܡ�
 
-带有 src 属性的 <script> 元素不应该在其标签体中再包含额外的 JavaScript 代码，它们将会被浏览器忽略。
+���� src ���Ե� <script> Ԫ�ز�Ӧ�������ǩ�����ٰ�������� JavaScript ���룬���ǽ��ᱻ��������ԡ�
 -->
 <script type="text/javascript" src="test.js"></script>
 
-<!-- 通过 JavaScript 元素的 src 属性还可以包含来自外部域的 JavaScript 文件。 -->
+<!-- ͨ�� JavaScript Ԫ�ص� src ���Ի����԰��������ⲿ��� JavaScript �ļ��� -->
 <script type="text/javascript" src="http://www.google.com/js/jquery.js"></script>
 </head>
 <body>
