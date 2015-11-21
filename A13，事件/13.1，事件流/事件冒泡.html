@@ -2,22 +2,22 @@
 <html>
 <head>
 <!-- 
-�¼����������Ǵ�ҳ���н����¼���˳��
+事件流描述的是从页面中接收事件的顺序。
 
-IE���¼��������¼�ð�ݣ����¼���ʼʱ��������Ԫ�أ��ĵ���Ƕ�ײ��������Ǹ��ڵ㣩
-���գ�Ȼ�������ϴ�������Ϊ������Ľڵ㣨�ĵ�����
+IE的事件流叫做事件冒泡，即事件开始时由最具体的元素（文档中嵌套层次最深的那个节点）
+接收，然后逐级向上传播到较为不具体的节点（文档）。
 -->
 <title>Event Bubbling</title>
 </head>
 <body>
 	<!--  
-	���������ҳ��� <div> Ԫ�أ���ô��� click �¼��ᰴ������˳�򴫲���
-	1��<div>
-	2��<body>
-	3��<html>
-	4��document
+	如果单击了页面的 <div> 元素，那么这个 click 事件会按照如下顺序传播：
+	1，<div>
+	2，<body>
+	3，<html>
+	4，document
 	
-	���¼�һֱð�ݵ� window ����
+	将事件一直冒泡到 window 对象。
 	-->
 	<div id="div">Click me!</div>
 </body>

@@ -1,29 +1,29 @@
-<!-- Ìí¼Ó½Úµã£¨HTML ÔªËØ£©¡£ -->
+<!-- æ·»åŠ èŠ‚ç‚¹ï¼ˆHTML å…ƒç´ ï¼‰ã€‚ -->
 <!DOCTYPE html>
 <html>
 	<body>
 		<button type="button" onclick="addNode()">
-			Ôö¼ÓĞÂ¶ÎÂä
+			å¢åŠ æ–°æ®µè½
 		</button>
 		<div id="div1">
 			<p id="p1">
-				ÕâÊÇÒ»¸ö¶ÎÂä¡£
+				è¿™æ˜¯ä¸€ä¸ªæ®µè½ã€‚
 			</p>
 			<p id="p2">
-				ÕâÊÇÁíÒ»¸ö¶ÎÂä¡£
+				è¿™æ˜¯å¦ä¸€ä¸ªæ®µè½ã€‚
 			</p>
 		</div>
 		<script>
 		    /*
-			HTML DOM Ìí¼ÓĞÂÔªËØ£¬±ØĞëÊ×ÏÈ´´½¨¸ÃÔªËØ£¨ÔªËØ½Úµã£©£¬È»ºóÏòÒ»¸öÒÑ´æÔÚµÄÔªËØ×·¼Ó¸ÃÔªËØ¡£
+			HTML DOM æ·»åŠ æ–°å…ƒç´ ï¼Œå¿…é¡»é¦–å…ˆåˆ›å»ºè¯¥å…ƒç´ ï¼ˆå…ƒç´ èŠ‚ç‚¹ï¼‰ï¼Œç„¶åå‘ä¸€ä¸ªå·²å­˜åœ¨çš„å…ƒç´ è¿½åŠ è¯¥å…ƒç´ ã€‚
 			*/
 			function addNode() {
-				var para = document.createElement("p");// ´´½¨ĞÂµÄ <p> ÔªËØ
-				var node = document.createTextNode("ÕâÊÇĞÂ¶ÎÂä¡£");// ´´½¨ÁËÒ»¸öÎÄ±¾½Úµã
-				para.appendChild(node);// Ïò <p> ÔªËØ×·¼ÓÕâ¸öÎÄ±¾½Úµã
+				var para = document.createElement("p");// åˆ›å»ºæ–°çš„ <p> å…ƒç´ 
+				var node = document.createTextNode("è¿™æ˜¯æ–°æ®µè½ã€‚");// åˆ›å»ºäº†ä¸€ä¸ªæ–‡æœ¬èŠ‚ç‚¹
+				para.appendChild(node);// å‘ <p> å…ƒç´ è¿½åŠ è¿™ä¸ªæ–‡æœ¬èŠ‚ç‚¹
 
-				var element = document.getElementById("div1");// ÕÒµ½Ò»¸öÒÑÓĞµÄÔªËØ
-				element.appendChild(para);// Õâ¸öÒÑÓĞµÄÔªËØ×·¼ÓĞÂÔªËØ
+				var element = document.getElementById("div1");// æ‰¾åˆ°ä¸€ä¸ªå·²æœ‰çš„å…ƒç´ 
+				element.appendChild(para);// è¿™ä¸ªå·²æœ‰çš„å…ƒç´ è¿½åŠ æ–°å…ƒç´ 
 			}
 		</script>
 	</body>

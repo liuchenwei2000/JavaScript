@@ -1,25 +1,25 @@
-<!-- HTML DOM ʹ JavaScript �������� HTML �¼�������Ӧ�� -->
+<!-- HTML DOM 使 JavaScript 有能力对 HTML 事件做出反应。 -->
 <!DOCTYPE html>
 <html>
 	<body>
 		<button type="button" onclick="removeNode()">
-			ɾ������
+			删除段落
 		</button>
 		<div id="div1">
 			<p id="p1">
-				����һ�����䡣
+				这是一个段落。
 			</p>
 			<p id="p2">
-				������һ�����䡣
+				这是另一个段落。
 			</p>
 		</div>
 		<script>
 		    /*
-			HTML DOM ɾ�� HTML Ԫ�أ��������Ȼ�ø�Ԫ�صĸ�Ԫ�ء�
+			HTML DOM 删除 HTML 元素，必须首先获得该元素的父元素。
 			*/
 			function removeNode() {
 				var child = document.getElementById("p1");
-				child.parentNode.removeChild(child);// �ҵ�ϣ��ɾ������Ԫ�أ�Ȼ��ʹ���� parentNode �������ҵ���Ԫ��
+				child.parentNode.removeChild(child);// 找到希望删除的子元素，然后使用其 parentNode 属性来找到父元素
 			}
 		</script>
 	</body>

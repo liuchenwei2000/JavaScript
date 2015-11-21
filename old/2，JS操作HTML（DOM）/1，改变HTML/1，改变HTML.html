@@ -1,39 +1,39 @@
-<!-- HTML DOM ÔÊĞí JavaScript ¸Ä±ä HTML ÔªËØµÄÄÚÈİ¡£-->
+<!-- HTML DOM å…è®¸ JavaScript æ”¹å˜ HTML å…ƒç´ çš„å†…å®¹ã€‚-->
 <!DOCTYPE html>
 <html>
 	<body>
-	    <!-- ¸Ä±ä HTML Êä³öÁ÷ -->
+	    <!-- æ”¹å˜ HTML è¾“å‡ºæµ -->
 		<script>
 		    /* 
-			ÔÚ JavaScript ÖĞ£¬document.write() ¿ÉÓÃÓÚÖ±½ÓÏò HTML Êä³öÁ÷Ğ´ÄÚÈİ¡£
-			JavaScript ÄÜ¹»´´½¨¶¯Ì¬µÄ HTML ÄÚÈİ£º
+			åœ¨ JavaScript ä¸­ï¼Œdocument.write() å¯ç”¨äºç›´æ¥å‘ HTML è¾“å‡ºæµå†™å†…å®¹ã€‚
+			JavaScript èƒ½å¤Ÿåˆ›å»ºåŠ¨æ€çš„ HTML å†…å®¹ï¼š
 			*/
 			document.write(Date());
-			// ¾ø²»ÒªÔÚÎÄµµ¼ÓÔØÖ®ºóÊ¹ÓÃ document.write()£¬Õâ»á¸²¸Ç¸ÃÎÄµµ¡£
+			// ç»ä¸è¦åœ¨æ–‡æ¡£åŠ è½½ä¹‹åä½¿ç”¨ document.write()ï¼Œè¿™ä¼šè¦†ç›–è¯¥æ–‡æ¡£ã€‚
 		</script>
 		
 		<p id="p1">
 			Hello World!
 		</p>
-		<!-- ¸Ä±ä HTML ÄÚÈİ -->
+		<!-- æ”¹å˜ HTML å†…å®¹ -->
 		<script>
 		    /* 
-			ĞŞ¸Ä HTML ÄÚÈİµÄ×î¼òµ¥µÄ·½·¨Ê±Ê¹ÓÃ innerHTML ÊôĞÔ£º
+			ä¿®æ”¹ HTML å†…å®¹çš„æœ€ç®€å•çš„æ–¹æ³•æ—¶ä½¿ç”¨ innerHTML å±æ€§ï¼š
 			*/
 			document.getElementById("p1").innerHTML = "New text!";
 		</script>
 		
 		<img id="image" src="../images/eg_bulboff.gif" />
-		<!-- ¸Ä±ä HTML ÊôĞÔ -->
+		<!-- æ”¹å˜ HTML å±æ€§ -->
 		<script>
 	        /*
-			¸Ä±ä HTML ÔªËØµÄÊôĞÔ£¬Óï·¨ÈçÏÂ£º
+			æ”¹å˜ HTML å…ƒç´ çš„å±æ€§ï¼Œè¯­æ³•å¦‚ä¸‹ï¼š
 			document.getElementById(id).attribute=new value
 			*/
 			document.getElementById("image").src = "../images/eg_bulbon.gif";
 		</script>
 		<p>
-			µÆ±¾À´ÊÇ¹Ø±ÕµÄ£¬Ò»´ò¿ªÍøÒ³¾ÍÁÁÁË¡£
+			ç¯æœ¬æ¥æ˜¯å…³é—­çš„ï¼Œä¸€æ‰“å¼€ç½‘é¡µå°±äº®äº†ã€‚
 		</p>
 	</body>
 

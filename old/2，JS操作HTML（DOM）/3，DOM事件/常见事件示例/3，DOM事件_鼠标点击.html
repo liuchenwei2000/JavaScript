@@ -1,25 +1,25 @@
-<!-- HTML ³£¼ûÊÂ¼þ Ö® onmousedown¡¢onmouseup ÒÔ¼° onclick ÊÂ¼þ -->    
+<!-- HTML å¸¸è§äº‹ä»¶ ä¹‹ onmousedownã€onmouseup ä»¥åŠ onclick äº‹ä»¶ -->    
 <!DOCTYPE html>
 <html>
 	<body>
 	    <!-- 
-		onmousedown, onmouseup ÒÔ¼° onclick ¹¹³ÉÁËÊó±êµã»÷ÊÂ¼þµÄËùÓÐ²¿·Ö¡£
-		Ê×ÏÈµ±µã»÷Êó±ê°´Å¥Ê±£¬»á´¥·¢ onmousedown ÊÂ¼þ£»
-		µ±ÊÍ·ÅÊó±ê°´Å¥Ê±£¬»á´¥·¢ onmouseup ÊÂ¼þ£»
-		×îºó£¬µ±Íê³ÉÊó±êµã»÷Ê±£¬»á´¥·¢ onclick ÊÂ¼þ¡£ 
+		onmousedown, onmouseup ä»¥åŠ onclick æž„æˆäº†é¼ æ ‡ç‚¹å‡»äº‹ä»¶çš„æ‰€æœ‰éƒ¨åˆ†ã€‚
+		é¦–å…ˆå½“ç‚¹å‡»é¼ æ ‡æŒ‰é’®æ—¶ï¼Œä¼šè§¦å‘ onmousedown äº‹ä»¶ï¼›
+		å½“é‡Šæ”¾é¼ æ ‡æŒ‰é’®æ—¶ï¼Œä¼šè§¦å‘ onmouseup äº‹ä»¶ï¼›
+		æœ€åŽï¼Œå½“å®Œæˆé¼ æ ‡ç‚¹å‡»æ—¶ï¼Œä¼šè§¦å‘ onclick äº‹ä»¶ã€‚ 
 		-->
 		<div onmousedown="mDown(this)" onmouseup="mUp(this)" style="background-color:green;color:#ffffff;width:90px;height:20px;padding:40px;font-size:12px;">
-			Çëµã»÷ÕâÀï
+			è¯·ç‚¹å‡»è¿™é‡Œ
 		</div>
 		<script>
 			function mDown(obj) {
 				obj.style.backgroundColor = "#1ec5e5";
-				obj.innerHTML = "ÇëÊÍ·ÅÊó±ê°´Å¥"
+				obj.innerHTML = "è¯·é‡Šæ”¾é¼ æ ‡æŒ‰é’®"
 			}
 
 			function mUp(obj) {
 				obj.style.backgroundColor = "green";
-				obj.innerHTML = "Çë°´ÏÂÊó±ê°´Å¥"
+				obj.innerHTML = "è¯·æŒ‰ä¸‹é¼ æ ‡æŒ‰é’®"
 			}
 		</script>
 	</body>

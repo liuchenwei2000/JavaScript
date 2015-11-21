@@ -1,18 +1,18 @@
-<!-- HTML ³£¼ûÊÂ¼ş Ö® onload/onunload -->
+<!-- HTML å¸¸è§äº‹ä»¶ ä¹‹ onload/onunload -->
 <!DOCTYPE html>
 <html>
     <!-- 
-    onload ºÍ onunload ÊÂ¼ş»áÔÚÓÃ»§½øÈë»òÀë¿ªÒ³ÃæÊ±±»´¥·¢¡£
-	onload ÊÂ¼ş¿ÉÓÃÓÚ¼ì²â·ÃÎÊÕßµÄä¯ÀÀÆ÷ÀàĞÍºÍä¯ÀÀÆ÷°æ±¾£¬²¢»ùÓÚÕâĞ©ĞÅÏ¢À´¼ÓÔØÍøÒ³µÄÕıÈ·°æ±¾¡£
-	onload ºÍ onunload ÊÂ¼ş¿ÉÓÃÓÚ´¦Àí cookie¡£
+    onload å’Œ onunload äº‹ä»¶ä¼šåœ¨ç”¨æˆ·è¿›å…¥æˆ–ç¦»å¼€é¡µé¢æ—¶è¢«è§¦å‘ã€‚
+	onload äº‹ä»¶å¯ç”¨äºæ£€æµ‹è®¿é—®è€…çš„æµè§ˆå™¨ç±»å‹å’Œæµè§ˆå™¨ç‰ˆæœ¬ï¼Œå¹¶åŸºäºè¿™äº›ä¿¡æ¯æ¥åŠ è½½ç½‘é¡µçš„æ­£ç¡®ç‰ˆæœ¬ã€‚
+	onload å’Œ onunload äº‹ä»¶å¯ç”¨äºå¤„ç† cookieã€‚
 	-->
 	<body onload="checkCookies()" onunload="sayBye()">
 		<script>
 			function checkCookies() {
 				if (navigator.cookieEnabled == true) {
-					alert("ÒÑÆôÓÃ cookie");
+					alert("å·²å¯ç”¨ cookie");
 				} else {
-					alert("Î´ÆôÓÃ cookie");
+					alert("æœªå¯ç”¨ cookie");
 				}
 			}
 			
@@ -21,7 +21,7 @@
 			}
 		</script>
 		<p>
-			ÌáÊ¾¿ò»á¸æËßÄã£¬ä¯ÀÀÆ÷ÊÇ·ñÒÑÆôÓÃ cookie¡£
+			æç¤ºæ¡†ä¼šå‘Šè¯‰ä½ ï¼Œæµè§ˆå™¨æ˜¯å¦å·²å¯ç”¨ cookieã€‚
 		</p>
 	</body>
 
