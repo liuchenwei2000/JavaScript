@@ -26,3 +26,17 @@ function sum(num1, num2) {
 	return num1 + num2;
 }
 typeof sum;// function
+
+// 除非为了检测一个变量是否已经定义，否则应尽量避免使用 typeof 操作符。
+if(typeof foo === 'undefined')
+{
+	console.log('foo is undefined');
+}
+// 为了检测一个对象的类型，强烈推荐使用 Object.prototype.toString 方法，因为这是唯一一个可依赖的方式。
+var type = Object.prototype.toString.call(sum);
+console.log(type);
+
+if('[object Function]' === type)
+{
+	console.log('sum is a function');
+}
