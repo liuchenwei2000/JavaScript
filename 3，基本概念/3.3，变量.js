@@ -12,6 +12,13 @@ var age = 5;
 var obj = "object";
 obj = 10;
 
+// 与变量相反，const 用于定义常量
+const PI = 3.14;
+console.log(PI);
+
+PI = 3.15;// 对常量赋值是无效的
+console.log(PI);
+
 // 使用 var 定义的变量将成为定义该变量的作用域中的局部变量。
 // 也就是说，如果在函数中用 var 定义了一个变量，在函数退出后该变量就会被销毁。
 function sayHi() {
