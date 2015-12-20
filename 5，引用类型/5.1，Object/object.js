@@ -64,6 +64,7 @@ for ( var prop in person4) {
 console.log("Object.keys(person4)=" + Object.keys(person4));
 
 // 删除一个属性，需要使用 delete 命令
+// 删除对象的属性后可能会让来自原型链中的（同名）属性显露出来。
 delete person4["last name"];
 
 // 一旦使用 delete 命令删除某个属性，再读取该属性就会返回 undefined，

@@ -9,7 +9,7 @@
  * 如果对 condition 求值的结果是 true，则执行 statiement1，否则执行 statement2.
  */
 
-var age = 20;
+var age = 22;
 if (age > 20) {
 	console.log("You can enter in");
 } else {
@@ -29,7 +29,8 @@ if (age > 20) {
 
 do {
 	console.log("in do-while loop");
-} while (age > 20);
+    age++;
+} while (age > 20 && age < 30);
 
 /**
  * while 语句
@@ -42,8 +43,9 @@ do {
  * while 语句属于前测试循环语句，在循环体内的代码被执行之前，就会对条件求值。
  */
 
-while (age > 20) {
+while (age > 30 && age < 40) {
 	console.log("in while loop");
+    age++;
 }
 
 /**
@@ -68,15 +70,15 @@ for (var i = 0; i < count; i++) {
 // 在 for 循环的变量初始化表达式中，也可以不使用 var 关键字，该变量的初始化可以在外部执行。
 
 var index;
-for (index = 0; index < count; i++) {
+for (index = 0; index < count; index++) {
 	console.log("i=" + i);
 }
 
 // for 语句中的初始化表达式、控制表达式和循环后表达式都是可选的。下面是一个无限循环：
 
-for (;;) {
-	// do something
-}
+//for (;;) {
+//	// do something
+//}
 
 /**
  * for-in 语句
@@ -90,12 +92,16 @@ for (;;) {
  * 
  * ECMAScript 对象的属性没有顺序，因此通过 for-in 循环输出的属性名的顺序是不可预测的。
  * 建议在使用 for-in 循环之前，先检测确认该对象的值不是 null 或 undefined。
+ * 另外可以使用 typeof 操作符和 hasOwnProperty 方法进行属性过滤操作。
  */
 
 // 使用 for-in 循环来显示 BOM 中 window 对象的所有属性。
 // 每次执行循环时，都会将 window 对象中存在的一个属性名赋值给变量 prop，这个过程会一直持续到对象中的所有属性都被枚举一遍为止。
 for ( var prop in window) {
-	console.log(prop);
+	// 过滤掉函数属性
+	if(typeof window[prop] !== 'function'){
+		console.log(prop);
+	}
 }
 
 /**
