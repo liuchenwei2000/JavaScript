@@ -1,5 +1,5 @@
 
-// 缩小数组的方法：reduce()、reduceRight()
+// 归并数组的方法：reduce()、reduceRight()
 
 /**
  * 这两个方法都会迭代数组的所有项，然后构建一个最终返回的值。

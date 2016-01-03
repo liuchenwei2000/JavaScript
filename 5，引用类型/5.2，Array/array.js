@@ -68,7 +68,7 @@ mycars[1] = "Volvo";
 mycars[2] = "BMW";
 
 // 第一种方式
-for (i = 0; i < mycars.length; i++) {
+for (var i = 0; i < mycars.length; i++) {
 	console.log(mycars[i]);
 }
 
