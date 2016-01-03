@@ -1,8 +1,9 @@
 
 /**
- * 鉴于 ECMAScript 是松散类型的，因此需要typeof 操作符来检测给定变量的数据类型。
+ * 鉴于 ECMAScript 是松散类型的，因此需要 typeof 操作符来检测给定变量的数据类型。
  * 
  * 对一个值使用 typeof 操作符可能返回下列某个字符串：
+ *
  * undefined —— 如果这个值未定义
  * boolean —— 如果这个值是布尔值
  * string —— 如果这个值是字符串

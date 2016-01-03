@@ -14,7 +14,7 @@ if (a === undefined) {
 
 
 /**
- * Null类型也只有一个值，即特殊的 null。
+ * Null 类型也只有一个值，即特殊的 null。
  * 从逻辑角度看，null 值表示一个空对象指针，
  * 而这也正是使用 typeof 操作符检测 null 值时会返回"object"的原因。
  */

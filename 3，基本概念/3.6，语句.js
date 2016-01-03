@@ -153,43 +153,43 @@ for (var i = 1; i < 10; i++) {
 
 var key = 3;
 switch (key) {
-case 1:
-	console.log("One");
-	break;
-case 2:
-	console.log("Two");
-	break;
-case 3:
-	console.log("Three");
-	break;
-case 4:
-	console.log("Four");
-	break;
-default:
-	console.log("Zero");
+	case 1:
+		console.log("One");
+		break;
+	case 2:
+		console.log("Two");
+		break;
+	case 3:
+		console.log("Three");
+		break;
+	case 4:
+		console.log("Four");
+		break;
+	default:
+		console.log("Zero");
 }
 
 // 如果确实需要混合几种情形，可以省略部分 break 关键字。
 
 var month = 11;
 switch (month) {
-case 1:
-case 3:
-case 5:
-case 7:
-case 8:
-case 10:
-case 12:
-	console.log("31 days");
-	break;
-case 4:
-case 6:
-case 9:
-case 11:
-	console.log("30 days");
-	break;
-default:
-	console.log("28 or 29 days");
+	case 1:
+	case 3:
+	case 5:
+	case 7:
+	case 8:
+	case 10:
+	case 12:
+		console.log("31 days");
+		break;
+	case 4:
+	case 6:
+	case 9:
+	case 11:
+		console.log("30 days");
+		break;
+	default:
+		console.log("28 or 29 days");
 }
 
 // switch 语句中使用任何数据类型（在很多其他语言中只能使用数值），无论是字符串，还是对象都没有问题。
@@ -218,14 +218,14 @@ default:
 var fruit = "banana";
 
 switch (fruit) {
-case "banana":
-	console.log("Monkey like it");
-	break;
-case "apple":
-	console.log("I like it");
-	break;
-default:
-	console.log("nothing");
+	case "banana":
+		console.log("Monkey like it");
+		break;
+	case "apple":
+		console.log("I like it");
+		break;
+	default:
+		console.log("nothing");
 }
 
 var fruits = {

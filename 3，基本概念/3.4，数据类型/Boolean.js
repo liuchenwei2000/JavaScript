@@ -16,9 +16,10 @@ if(true) {
  * 
  * 	数据类型						转换为 true						转换为 false
  * 
- * 	String						任何非空字符串					空字符串("")
- * 	Number						任何非零数值（包括无穷大）		0和NaN
+ * 	String						任何非空字符串					    空字符串("")
+ * 	Number						任何非零数值（包括无穷大）		    0和NaN
  * 	Object						任何对象							null
+ * 	Undefined					不适用						    undefined
  */ 
 var result = Boolean("hello");
 
