@@ -42,7 +42,7 @@ var book2 = new Book("Code complete", "Bob", 1);
 
 console.log("book.printInfo == book2.printInfo ? " + book.printInfo === book2.printInfo);
 
-/*
+/**
  * 创建两个完成同样任务的 Function 实例的确没有必要，况且有 this 对象在，
  * 根本不用在执行代码前就把函数绑定到特定对象上面。
  * 因此，可以使用下面的方式把函数定义转移到构造函数外面来解决这个问题。 
@@ -64,10 +64,9 @@ function printInfo() {
 var abook = new ABook("Thinking in Java", "Bruce Eckel", 4);
 abook.printInfo();
 
-/*
+/**
  * 这种方式解决了两个函数做同一件事的问题，但新问题是：
  * 在全局作用域中定义的函数实际上只能被某个对象调用，这让全局作用域有点名不副实。
  * 另外，如果对象需要定义很多方法，那么就要定义很多全局函数，那这个自定义的引用类型就丝毫没有封装性可言。
  * 这些问题都可以通过使用原型模式来解决。
- * 
  */

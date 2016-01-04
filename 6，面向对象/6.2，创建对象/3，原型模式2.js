@@ -1,7 +1,6 @@
 
 /**
- * 无论什么时候，只要创建了一个新函数，就会根据一组特定的规则
- * 为该函数创建一个 prototype 属性，这个属性指向函数的原型对象。
+ * 无论什么时候，只要创建了一个新函数，就会根据一组特定的规则为该函数创建一个 prototype 属性，这个属性指向函数的原型对象。
  */
 
 function Book() {
@@ -31,6 +30,7 @@ console.log("Book.prototype.isPrototypeOf(book2)=" + Book.prototype.isPrototypeO
 
 // ES5 增加了一个新方法 Object.getPrototypeOf()，它返回 [[Prototype]] 的值。
 // 下面的例子可以证明  Object.getPrototypeOf() 返回的对象实际就是这个对象的原型。
+console.log("Object.getPrototypeOf(book1)=" + Object.getPrototypeOf(book1));
 console.log("Object.getPrototypeOf(book1) == Book.prototype=" + (Object.getPrototypeOf(book1) == Book.prototype));
 
 /*

@@ -38,3 +38,4 @@ function Book(title, author, edition) {
 var book2 = new Book("Thinking in Java", "Bruce Eckel", 3);
 book2.printInfo();
 console.log("book2.constructor == Book=" + (book2.constructor == Book));
+console.log("book2 instanceof Book=" + (book2 instanceof Book));

@@ -9,7 +9,10 @@
  * ECMAScript 中有两种属性：数据属性和访问器属性。
  * 
  * 1，数据属性
- * 数据属性包含了一个数据值的位置，在这个位置可以读取和写入值。有4个描述其行为的性质：
+ *
+ * 数据属性包含了一个数据值的位置，在这个位置可以读取和写入值。
+ *
+ * 有4个描述其行为的性质：
  * [[Configurable]]
  * 表示能否通过 delete 删除属性从而重新定义属性，能否修改属性的性质，或者能否把属性修改为访问器属性。默认值是 true。
  * [[Enumerable]]
@@ -39,7 +42,7 @@ var person2 = {};
 // 定义 person2 的 name 属性不可修改，且值为 Tom
 Object.defineProperty(person2, "name", {
 	writable : false,
-	value : "Tom"                                                                                                                                                                                                                                                                                                                                    
+	value : "Tom"
 });
 
 console.log("person2.name=" + person2.name);
@@ -62,7 +65,7 @@ delete person3.name;
 console.log("person3.name=" + person3.name);
 
 // 一旦把属性定义为不可配置的，就不能再把它变回可配置了。
-// 此时，再调用 方法 Object.defineProperty() 修改除 writable 之外的性质，就会导致错误。
+// 此时，再调用方法 Object.defineProperty() 修改除 writable 之外的性质，就会导致错误。
 // 也就是说，可以多次调用 Object.defineProperty() 方法修改用一个属性，但在把 configurable 性质设置为 false 之后就会有限制了。
 Object.defineProperty(person3, "name", {
 	configurable : true,
@@ -75,9 +78,12 @@ Object.defineProperty(person3, "name", {
 
 /**
  * 2，访问器属性
+ *
  * 访问器属性不包含数据值，只包含一对 getter 和 setter 函数（不过这两个函数都不是必需的）。
  * 在读取访问器属性时，会调用 getter 函数，这个函数负责返回有效的值；
- * 在写入访问器属性时，会调用 setter 函数并传入新值，这个函数负责决定如何处理数据。有4个描述其行为的性质：
+ * 在写入访问器属性时，会调用 setter 函数并传入新值，这个函数负责决定如何处理数据。
+ *
+ * 有4个描述其行为的性质：
  * [[Configurable]]
  * 表示能否通过 delete 删除属性从而重新定义属性，能否修改属性的性质，或者能否把属性修改为访问器属性。默认值是 true。
  * [[Enumerable]]
