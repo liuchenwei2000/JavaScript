@@ -6,7 +6,7 @@ function sayHi() {
 	console.log("Hi");
 }
 
-// 关于函数声明，最重要的特征就是函数声明提升，也就是在执行代码之前会先读取函数声明。
+// 关于函数声明，最重要的特征就是函数声明提升（hoisting），也就是在执行代码之前会先读取函数声明。
 doSomething();
 
 function doSomething() {
