@@ -1,9 +1,9 @@
 
-// 函数方法：apply()、call、bind()
+// 函数方法：apply()、call()、bind()
 
 /**
  * 每个函数都包含两个非继承而来的方法：apply()和call()。
- * 这两个方法的用途都是指定在特定的作用域中调用函数，实际上等于设置函数体内this对象的值。
+ * 这两个方法的用途都是指定在特定的作用域中调用函数，实际上等于设置函数体内 this 对象的值。
  * 
  * apply() 方法接收两个参数：
  * 一个是在其中运行函数的作用域（即this值），另一个是参数数组。
@@ -55,5 +55,12 @@ sayColor.apply(this);
 sayColor.apply(window);
 sayColor.apply(mine);
 
-// 函数的toString方法返回函数的源码
+// 函数的 toString 方法返回函数的源码
 console.console.log("sum.toString()=" + sum.toString());
+
+
+// ES5 还定义了一个 bind() 方法，该方法会创建一个函数的实例。
+// 其 this 值会被绑定到传给 bind() 函数的值。
+
+var mineColor = sayColor.bind(mine);// 创建了一个叫 mineColor 的函数
+mineColor();// 在全局作用域调用 mineColor 函数

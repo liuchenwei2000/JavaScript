@@ -18,8 +18,8 @@ function sayColor() {
 	console.log("color=" + this.color);
 }
 
-sayColor();// 在全局作用域中调用 sayColor()，this引用的是全局对象 window
+sayColor();// 在全局作用域中调用 sayColor()，this 引用的是全局对象 window
 
 mine.sayColor = sayColor;
 
-mine.sayColor();// 在 mine 对象作用域中调用 sayColor()，this引用的是对象 mine
+mine.sayColor();// 在 mine 对象作用域中调用 sayColor()，this 引用的是对象 mine

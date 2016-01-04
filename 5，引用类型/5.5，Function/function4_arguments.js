@@ -40,7 +40,7 @@ function trueFactorial(num) {
 
 console.log("trueFactorial(5)=" + trueFactorial(5));
 
-// 下面的使用方式会出现计算错误
+// 下面的使用方式就不会出现计算错误
 var factorial3 = trueFactorial;
 
 trueFactorial = function() {
