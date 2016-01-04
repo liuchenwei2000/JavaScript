@@ -1,0 +1,39 @@
+<!-- throw 语句创建自定义错误。正确的技术术语是：创建或抛出异常（exception）。
+如果把 throw 与 try 和 catch 一起使用，那么就能够控制程序流，并生成自定义的错误消息。 -->
+<!DOCTYPE html>
+<html>
+	<body>
+		<script>
+		    /*
+			抛出异常语法：
+			    throw exception
+			exception 可以是 JavaScript 字符串、数字、逻辑值或对象。
+			*/
+			function myFunction() {
+				try {
+					var x = document.getElementById("demo").value;
+					if (x == "") throw "值为空";
+					if (isNaN(x)) throw "不是数字";
+					if (x > 10) throw "太大";
+					if (x < 5) throw "太小";
+				} catch(err) {// err 就是 throw 抛出的异常对象
+					var y = document.getElementById("mess");
+					y.innerHTML = "错误：" + err + "。";
+				}
+			}
+		</script>
+		<h1>
+			自定义错误
+		</h1>
+		<p>
+			请输入 5 到 10 之间的数字：
+		</p>
+		<input id="demo" type="text">
+		<button type="button" onclick="myFunction()">
+			测试输入值
+		</button>
+		<p id="mess">
+		</p>
+	</body>
+
+</html>

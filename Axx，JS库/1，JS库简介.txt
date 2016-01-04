@@ -1,7 +1,0 @@
-JavaScript 高级程序设计（特别是对浏览器差异的复杂处理），通常很困难也很耗时。为了应对这些调整，许多的 JavaScript (helper) 库应运而生。
-这些 JavaScript 库常被称为 JavaScript 框架。一些广受欢迎的 JavaScript 框架：jQuery、Prototype、MooTools……
-所有这些框架都提供针对常见 JavaScript 任务的函数，包括动画、DOM 操作以及 Ajax 处理。
-
-jQuery 是目前最受欢迎的 JavaScript 框架。它使用 CSS 选择器来访问和操作网页上的 HTML 元素（DOM 对象）。
-Prototype 提供用于执行常见 web 任务的简单 API。它是包含属性和方法的库，用于操作 HTML DOM。Prototype 通过提供类和继承，实现了对 JavaScript 的增强。
-MooTools 提供了可使常见的 JavaScript 编程更为简单的 API，也含有一些轻量级的效果和动画函数。
