@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" charset="utf-8">
+<head>
+</head>
+<body>
+<script src="dscript.js"></script>
+<script>
+    window.onload = function () {
+        loadScript('common.js');
+        // 动态脚本加载完成后，就可以在页面中的其他地方使用这个脚本
+        // 但并没有什么标准方式来探知脚本是否已加载完成，可以采用下面的方式。
+        setTimeout(function () {
+            sayHi();
+        }, 200);
+        // 或这种方式
+        loadScriptString('function greeting(){alert("Nice to meet you!");}', function () {
+            greeting();
+        });
+    };
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" charset="utf-8">
+<head>
+</head>
+<body>
+<script src="dscript.js"></script>
+<script>
+    window.onload = function () {
+        // 加载外部样式文件的过程是异步的，也就是加载样式与执行 JS 代码的过程没有固定的次序。
+        // 一般来说，知不知道样式已经加载完成并不重要。
+        loadCss('styles.css');
+
+        setTimeout(function () {
+            loadCssString('body {background-color: blue;}');
+        }, 1000);
+    };
+</script>
+</body>
+</html>
