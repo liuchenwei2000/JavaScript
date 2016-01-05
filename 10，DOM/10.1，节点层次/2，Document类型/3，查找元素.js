@@ -27,7 +27,7 @@ console.log("divs.item(1)=" + divs.item(1));
 
 // 要想获取文档中的所有元素，可以使用如下方式：
 
-var all = document.getElementByTagName("*");
+var all = document.getElementsByTagName("*");
 
 /*
  * 3，getElementsByName() 方法会返回带有指定 name 属性的所有元素，也是一个 HTMLCollection 对象。
@@ -35,4 +35,4 @@ var all = document.getElementByTagName("*");
  * 最常用的情况是获取单选按钮，为了确保发送给浏览器的值正确无误，所有单选按钮必须具有相同的 name 属性。
  */
 
-var radios = document.getElementByName("color");
+var radios = document.getElementsByTagName("color");

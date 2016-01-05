@@ -34,7 +34,7 @@ console.log("document.referrer=" + document.referrer);
  * 
  * 当页面中包含来自其他子域的框架（frame）或内嵌框架时，能够设置 domain 就非常方便了。
  * 由于跨域安全限制，来自不同子域的页面无法通过 JavaScript 通信。
- * 而通过将每个页面的 domain 设置为相同的值，这些页面就可以相互访问对方包含的 JavaScript 对象了。
+ * 而通过将每个页面的 domain 设置为相同的值，这些页面就可以相互访问对方包含的 JavaScript 对象。
  * 
  * 另外，浏览器对 domain 属性还有一个限制，如果域名一开始是松散的，那就不能将它再设置为紧绷的。
  * 比如将 domain 设置为 "mysite.com"之后，就不能再将其设置回 "app.mysite.com"，否则会出错。

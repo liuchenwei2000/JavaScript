@@ -2,7 +2,8 @@
 /**
  * 序列化选项
  * 
- * JSON.stringify() 除了要序列化的 JavaScript 对象外，还可以接收另外两个参数，这两个参数用于指定以不同的方式序列化 JavaScript 对象。
+ * JSON.stringify() 除了要序列化的 JavaScript 对象外，还可以接收另外两个参数，
+ * 这两个参数用于指定以不同的方式序列化 JavaScript 对象。
  * 第一个参数是个过滤器，可以是一个数组或者是一个函数；第二个参数是一个选项，表示是否在JSON字符串中保留缩进。
  * 单独或组合使用这两个参数，可以更全面深入地控制JSON的序列化。
  */
@@ -19,8 +20,9 @@ var book = {
 var jsonText = JSON.stringify(book, [ "title", "authors" ]);
 console.log("jsonText=" + jsonText);
 
-// 如果第二个参数是函数，则行为会有所不同。传入的函数接收两个参数，属性名和属性值。 根据属性名可以知道应该如何处理要序列化的对象中的属性。
-// 为了改变序列化对象的结果，函数返回的值就是相应属性的值。如果函数反悔了 undefined，那么相应的属性会被忽略。
+// 如果第二个参数是函数，则行为会有所不同。传入的函数接收两个参数，属性名和属性值。
+// 根据属性名可以知道应该如何处理要序列化的对象中的属性。为了改变序列化对象的结果，函数返回的值就是相应属性的值。
+// 如果函数返回了 undefined，那么相应的属性会被忽略。
 jsonText = JSON.stringify(book, function(key, value) {
 	switch (key) {
 	case "authors":

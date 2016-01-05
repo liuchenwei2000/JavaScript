@@ -21,10 +21,10 @@ var book = {
 var jsonText = JSON.stringify(book);
 console.log("jsonText=" + jsonText);
 
-var bookCopy = JSON.parse(jsonText, function(key,value){
-	if("releaseDate" == key) {
+var bookCopy = JSON.parse(jsonText, function (key, value) {
+	if ("releaseDate" == key) {
 		return new Date(value);
-	}else {
+	} else {
 		return value;
 	}
 }); 

@@ -1,0 +1,14 @@
+<html>
+<head>
+    <title>document.write() Example</title>
+</head>
+<body>
+<!--
+还可以使用 document.write() 和 document.writeln() 方法动态地包含外部资源，例如JavaScript 文件等。
+在包含 JavaScript 文件时，必须注意要用 \ 对 /script 进行转义。
+-->
+<script type="text/javascript">
+    document.write("<script type=\"text/javascript\" src=\"file.js\">" + "<\/script>");
+</script>
+</body>
+</html>

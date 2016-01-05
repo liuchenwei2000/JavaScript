@@ -19,7 +19,7 @@ console.log("div.getAttribute(\"id\")=" + div.getAttribute("id"));
 console.log("div.getAttribute(\"ID\")=" + div.getAttribute("ID"));
 console.log("div.getAttribute(\"title\")=" + div.getAttribute("title"));
 console.log("div.getAttribute(\"class\")=" + div.getAttribute("class"));
-// 也可以获取自定义属性的值
+// 也可以获取自定义属性的值，根据 HTML5 规范，自定义属性应该加上 data- 前缀以便验证。
 console.log("div.getAttribute(\"a_custom_attr\")=" + div.getAttribute("a_custom_attr"));
 
 // 任何元素的所有属性，也都可以通过 DOM 元素本身的属性来访问。
