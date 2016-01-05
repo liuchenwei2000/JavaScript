@@ -59,3 +59,31 @@ console.log("div.align=" + div.align);
 
 div.removeAttribute("a_custom_attr");
 console.log("div.getAttribute(\"a_custom_attr\")=" + div.getAttribute("a_custom_attr"));
+
+
+/**
+ * 4，attributes
+ *
+ * Element 类型是使用 属性的唯一一个 DOM 节点类型。
+ * attributes 属性中包含一个 NamedNodeMap，是一个动态的集合。
+ * 元素的每一个属性都由一个 Attr 节点表示，每个节点都保存在 NamedNodeMap 对象中。
+ * 它拥有下列方法：
+ */
+
+// attributes 属性中包含一系列节点，每个节点的 nodeName 就是属性的名称，而节点的 nodeValue 就是属性值。
+// 按照指定 nodeName 返回相应的属性
+var id = div.attributes.getNamedItem('id');
+console.log("div.id=" + id.nodeValue);
+// 删除指定 nodeName 对应的属性
+div.attributes.removeNamedItem('title');
+
+// 由于 attributes 的方法不够方便，因此更多的是会使用上面的 3 种方法。
+// 如果想要遍历元素的属性，那 attributes 属性倒是可以派上用场。
+// 注：针对 attributes 中的属性，不同的浏览器返回的顺序不同。
+
+for (var i = 0; i < div.attributes.length; i++) {
+    var nodeName = div.attributes[i].nodeName;
+    var nodeValue = div.attributes[i].nodeValue;
+
+    console.log("name=" + nodeName + ", value=" + nodeValue);
+}
