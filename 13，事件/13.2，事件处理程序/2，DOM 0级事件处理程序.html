@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+通过 JavaScript 指定事件处理程序的传统方式，就是将一个函数赋值给一个事件处理程序属性。
+这种方式为所有浏览器所支持的原因一是简单，二是具有跨浏览器的优势。
+-->
+<html>
+<head>
+	<script>
+		/**
+		要使用 JavaScript 指定事件处理程序，首先必须取得一个要操作的对象的引用。
+		每个元素（包括 window 和 document）都有自己的事件处理程序属性，这些属性通常全部小写，例如 onclick。
+		将这种属性的值设置为一个函数，就可以指定事件处理程序。
+		*/
+		window.onload = function () {
+			var button = document.getElementById("btn");
+			/**
+			 使用 DOM 0级方法指定的事件处理程序被认为是元素的方法。
+			 因此，这时候的事件处理程序是在元素的作用域中运行；换句话说，程序中的 this 引用当前元素。
+			 不仅仅是 ID，实际上可以在事件处理程序中通过 this 访问元素的任何属性和方法。
+			 */
+			button.onclick = function () {
+				alert("Hello " + this.id);
+			};
+			// 通过下面的方式删除事件处理程序
+//			button.onclick = null;
+		};
+	</script>
+</head>
+<body>
+	<input id="btn" type="button" value="Click me!" />
+</body>
+</html>

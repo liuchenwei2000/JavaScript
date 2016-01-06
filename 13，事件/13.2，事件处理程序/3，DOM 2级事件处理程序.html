@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+DOM 2级事件定义了两个方法，用于处理指定和删除事件处理程序的操作：
+addEventListener() 和 removeEventListener()。
+-->
+<html>
+<head>
+	<script>
+		/**
+		 所有 DOM 节点中都包含这两个方法，并且它们都接受 3 个参数：
+		 要处理的事件名、作为事件处理程序的函数和一个布尔值。
+		 最后这个布尔值参数如果是 true 表示在捕获阶段调用事件处理程序；如果是 false 表示在冒泡阶段调用事件处理程序。
+		 大多数情况下，都是将事件处理程序添加到事件流的冒泡阶段，这样可以最大限度地兼容各种浏览器。
+		 */
+		window.onload = function () {
+			var button = document.getElementById("btn");
+			// 与 DOM 0级方法一样，这里添加的事件处理程序也是在其依附的元素的作用域中运行。
+			button.addEventListener('click', function () {
+				alert("Hello " + this.id);
+			}, false);
+
+			// 使用 DOM 2级方法添加事件处理程序的主要好处是可以添加多个事件处理程序。
+			// 这两个事件处理程序会按照添加它们的顺序触发。
+			button.addEventListener('click', function () {
+				alert("Bye bye!");
+			}, false);
+
+			/**
+			 通过 addEventListener() 添加的事件处理程序只能使用 removeEventListener() 来移除；
+			 移除时传入的参数与添加处理程序时使用的参数相同。
+			 这也意味着通过 addEventListener() 添加的匿名函数将无法移除。
+			 */
+		};
+	</script>
+</head>
+<body>
+	<input id="btn" type="button" value="Click me!" />
+</body>
+</html>
