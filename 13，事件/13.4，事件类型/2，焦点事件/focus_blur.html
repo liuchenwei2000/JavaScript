@@ -1,0 +1,20 @@
+<!-- HTML 常见事件 之 onfocus/onblur 事件 -->
+<!DOCTYPE html>
+<html>
+	<meta http-equiv="Content-Type" charset="utf-8" >
+	<head>
+		<script>
+			function changeColor(event, color) {
+				event.currentTarget.style.background = color;
+			}
+		</script>
+	</head>
+	<body>
+		请输入英文字符：
+		<input type="text" onfocus="changeColor(event,'red')" onblur="changeColor(event,'green')">
+		<p>
+			当输入字段获得/失去焦点时，会触发改变背景颜色的函数。
+		</p>
+	</body>
+
+</html>
