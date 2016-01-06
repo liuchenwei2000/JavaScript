@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html style="height:100%">
+	<meta http-equiv="Content-Type" charset="utf-8" >
+	<head>
+		<script>
+			window.onload = function(){
+				document.body.onmousemove = function(event){
+					/**
+					 * 鼠标事件都是在浏览器视口中的特定位置上发生的。这个位置信息保存在事件对象的 clientX 和 clientY 属性中。
+					 * 所有浏览器都支持这两个属性，它们的值表示事件发生时鼠标指针在视图中的水平和垂直坐标。
+					 */
+					var client = document.getElementById('client');
+					client.innerHTML = event.clientX + ","+event.clientY;
+
+					/**
+					 * 页面坐标通过事件对象的 pageX 和 pageY 属性能告诉你事件是在页面中的什么位置发生的。
+					 * 换句话说，这两个属性表示鼠标光标在页面中的位置，因此坐标是从页面本身而非视口的左边和顶边计算的。
+					 */
+					var page = document.getElementById('page');
+					page.innerHTML = event.pageX + ","+event.pageY;
+
+					/**
+					 * 鼠标事件发生时，不仅会有相对于浏览器窗口的位置，还有一个相对于整个电脑屏幕的位置。
+					 * 而通过 screenX 和 screenY 属性就可以确定鼠标事件发生时鼠标指针相对于整个屏幕的坐标信息。
+					 */
+					var screen = document.getElementById('screen');
+					screen.innerHTML = event.screenX + ","+event.screenY;
+				}
+			};
+		</script>
+	</head>
+	<body style="height:100%">
+		<div>
+			Client coordinates:<span id="client"></span>
+			<br/>
+			Page   coordinates:<span id="page"></span>
+			<br/>
+			Screen coordinates:<span id="screen"></span>
+		</div>
+	</body>
+</html>

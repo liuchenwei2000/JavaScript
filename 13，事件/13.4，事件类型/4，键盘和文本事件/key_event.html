@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <meta http-equiv="Content-Type" charset="utf-8" >
+	<head>
+		<script>
+            /**
+             * 在发生 keydown 和 keyup 事件时，event 对象的 keyCode 属性中会包含一个代码，与键盘上一个特定的键对应。
+             * 对数字字母字符键，keyCode 属性的值与 ASCII 码中对应小写字母或数字的编码相同。
+             */
+			function echoOnKeyDown(event) {
+				var span = document.getElementById("echoDown");
+                span.innerHTML = event.keyCode;
+			}
+
+            /**
+             * 发生 keypress 事件意味着按下的键会影响到屏幕中文本的显示。
+             * 在所有浏览器中，按下能够插入或删除字符的键都会触发 keypress 事件；按下其他键能否触发此事件因浏览器而异。
+             */
+            function echoOnKeyPress(event) {
+                var span = document.getElementById("echoPress");
+                // event 对象都支持一个 charCode 属性，这个属性只有在发生 keypress
+                // 事件时才包含值，而且这个值是按下的那个键所代表字符的 ASCII 编码。
+                var charcode = event.charCode;
+                // 在取得了字符编码之后，就可以使用下面的方式将其转换成实际的字符。
+                span.innerHTML = String.fromCharCode(charcode);
+            }
+		</script>
+	</head>
+    <body>
+	<br>
+		<input type="text" id="input" onkeydown="echoOnKeyDown(event)" onkeypress="echoOnKeyPress(event)">
+		<br/>
+        Echo:<span id="echoDown"></span>
+        <br/>
+        Echo:<span id="echoPress"></span>
+	</body>
+</html>
