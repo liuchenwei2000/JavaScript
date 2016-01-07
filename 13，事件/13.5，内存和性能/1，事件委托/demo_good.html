@@ -1,0 +1,69 @@
+<!-- 多个事件处理程序好的实现方式示例 -->
+<!DOCTYPE html>
+<html>
+	<meta http-equiv="Content-Type" charset="utf-8" >
+	<head>
+        <title>Good demo</title>
+        <script>
+            /**
+             * 对"事件处理程序过多"问题的解决方案就是事件委托。
+             *
+             * 事件委托利用了事件冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件。
+             * 例如，click 事件会一直冒泡到 document 层次。
+             * 也就是说，可以为整个页面指定一个 onclick 事件处理程序，而不必给每个可单击的元素分别添加事件处理程序。
+             * 使用事件委托，只需在 DOM 树中尽量最高的层次上添加一个事件处理程序。
+             */
+            window.onload = function () {
+
+                // 因为只取得了一个 DOM 元素，只添加了一个事件处理程序。
+                // 虽然对用户来说最终的结果相同，但这种技术需要占用的内存更少。
+                var mylist = document.getElementById('mylist');
+
+                // 使用事件委托只为 <ul> 元素添加了一个 onclick 事件处理程序。
+                // 由于所有列表项都是这个元素的子节点，而且它们的事件会冒泡，所以单击事件最终会被这个函数处理。
+                mylist.onclick = function (event) {
+                    // 事件目标是被单击的列表项，故而可以通过检测 id 属性来决定采取适当的操作
+                    switch (event.target.id) {
+                        case 'goSomewhere':
+                            location.href = "http://www.baidu.com";
+                            break;
+                        case 'doSomething':
+                            document.title = "New title";
+                            break;
+                        case 'sayHi':
+                            alert("Hello World");
+                            break;
+                    }
+                }
+            };
+
+            /**
+             * 所有用到按钮的事件（多数鼠标事件和键盘事件）都适合采用事件委托技术。
+             * 如果可行的话，也可以考虑为 document 对象添加一个事件处理程序，用以处理页面上发生的某种特定类型的事件。
+             *
+             * 这样做与采取传统的做法相比具有如下优点:
+             *
+             * 1，document 对象很快就可以访问，而且可以在页面生命周期的任何时点上为它添加事件处理程序
+             * （无需等待 load 事件）。换句话说，只要可单击的元素呈现在页面上，就可以立即具备适当的功能。
+             *
+             * 2，在页面中设置事件处理程序所需的时间更少。
+             * 只添加一个事件处理程序所需的 DOM 引用更少，所花的时间也更少。
+             *
+             * 3，整个页面占用的内存空间更少，能够提升整体性能。
+             *
+             * 最适合采用事件委托技术的事件包括 click、mousedown、mouseup、keydown、keyup 和 keypress。
+             * 虽然 mouseover 和 mouseout 事件也冒泡，但要适当处理它们并不容易，而且经常需要计算元素的位置。
+             * （因为当鼠标从一个元素移到其子节点时，或者当鼠标移出该元素时，都会触发 mouseout 事件。）
+             *
+             */
+        </script>
+    </head>
+	<body>
+		<ul id="mylist">
+            <li id="goSomewhere">Go Somewhere</li>
+            <li id="doSomething">Do Something</li>
+            <li id="sayHi">Say Hi</li>
+        </ul>
+	</body>
+
+</html>

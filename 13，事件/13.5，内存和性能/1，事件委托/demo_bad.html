@@ -1,0 +1,39 @@
+<!-- 多个事件处理程序不好的实现方式示例 -->
+<!DOCTYPE html>
+<html>
+	<meta http-equiv="Content-Type" charset="utf-8" >
+	<head>
+        <title>Bad demo</title>
+        <script>
+            /**
+             * 如果在一个复杂的 Web 应用程序中，对所有可单击的元素都采用这种方式，
+             * 那么结果就会有数不清的代码用于添加事件处理程序。可以利用事件委托技术解决这个问题。
+             */
+            window.onload = function(){
+
+                var goSomewhereItem = document.getElementById('goSomewhere');
+                goSomewhereItem.onclick = function () {
+                    location.href = "http://www.baidu.com";
+                }
+
+                var doSomethingItem = document.getElementById('doSomething');
+                doSomethingItem.onclick = function () {
+                    document.title = "New title";
+                }
+
+                var sayHiItem = document.getElementById('sayHi');
+                sayHiItem.onclick = function () {
+                    alert("Hello World");
+                }
+            };
+        </script>
+    </head>
+	<body>
+		<ul id="mylist">
+            <li id="goSomewhere">Go Somewhere</li>
+            <li id="doSomething">Do Something</li>
+            <li id="sayHi">Say Hi</li>
+        </ul>
+	</body>
+
+</html>
