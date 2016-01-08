@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<meta http-equiv="Content-Type" charset="utf-8" >
+	<head>
+        <title>Serialize Form</title>
+    </head>
+	<body>
+        <form id="form" action="#">
+            <input type="text" name="code" />
+            <p>
+            <input type="text" name="message" />
+            <p>
+            <select name="color" id="color">
+                <option value="0">RED</option>
+                <option value="1">YELLOW</option>
+                <option value="2">BLUE</option>
+            </select>
+            <p>
+            <input type="submit" value="Submit Now!" />
+        </form>
+        <script>
+            var form = document.getElementById('form');
+
+            form.onsubmit = function(event){
+                console.log(serialize(form));
+                event.preventDefault();
+            };
+
+            // 自定义的序列化 form 函数
+            function serialize(form) {
+                var parts = [],
+                        field = null,
+                        i,
+                        len,
+                        j,
+                        optLen,
+                        option,
+                        optValue;
+                for (i = 0, len = form.elements.length; i < len; i++) {
+                    field = form.elements[i];
+                    switch (field.type) {
+                        case "select-one":
+                        case "select-multiple":
+                            if (field.name.length) {
+                                for (j = 0, optLen = field.options.length; j < optLen; j++) {
+
+                                    option = field.options[j];
+                                    if (option.selected) {
+                                        optValue = "";
+                                        if (option.hasAttribute) {
+                                            optValue = (option.hasAttribute("value") ?
+                                                    option.value : option.text);
+                                        } else {
+                                            optValue = (option.attributes["value"].specified ?
+                                                    option.value : option.text);
+                                        }
+                                        parts.push(encodeURIComponent(field.name) + "=" +
+                                                encodeURIComponent(optValue));
+                                    }
+                                }
+                            }
+                            break;
+                        case undefined: //字段集
+                        case "file": //文件输入
+                        case "submit": //提交按钮
+                        case "reset": //重置按钮
+                        case "button": //自定义按钮
+                            break;
+                        case "radio": //单选按钮
+                        case "checkbox": //复选框
+                            if (!field.checked) {
+                                break;
+                            }
+                        /* 执行默认操作 */
+                        default://不包含没有名字的表单字段
+                            if (field.name.length) {
+                                parts.push(encodeURIComponent(field.name) + "=" +
+                                        encodeURIComponent(field.value));
+                            }
+                    }
+                }
+                return parts.join("&");
+            }
+        </script>
+	</body>
+
+</html>

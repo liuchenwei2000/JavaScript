@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<meta http-equiv="Content-Type" charset="utf-8" >
+	<head>
+        <title>Select Field</title>
+        <script>
+
+            window.onload = function(){
+                var colorField = document.getElementById('color');
+                var genderField = document.getElementById('gender');
+
+                /**
+                 * 使用 DOM 的 appendChild() 方法，就可以将第一个选择框中的选项直接移动到第二个选择框中。
+                 * 因为如果为 appendChild() 方法传入一个文档中已有的元素，那么就会先从该元素的父节点中移除它，再把它添加到指定的位置。
+                 * 移动选项与移除选项有一个共同之处，即会重置每一个选项的 index 属性。
+                 *
+                 * 要将选择框中的某一项移动到特定位置，最合适的 DOM 方法就是 insertBefore() 方法，
+                 * appendChild() 方法只适用于将选项添加到选择框的最后。
+                 */
+
+                genderField.appendChild(colorField.options[1]);
+            };
+
+        </script>
+    </head>
+	<body>
+        颜色
+        <select name="color" id="color">
+            <option value="0">RED</option>
+            <option value="1">YELLOW</option>
+            <option value="2">BLUE</option>
+        </select>
+        性别
+        <select name="gender" id="gender">
+            <option value="M">MALE</option>
+            <option value="F">FEMALE</option>
+        </select>
+    </body>
+
+</html>

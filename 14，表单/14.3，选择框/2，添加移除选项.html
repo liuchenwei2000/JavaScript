@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<meta http-equiv="Content-Type" charset="utf-8" >
+	<head>
+        <title>Select Field</title>
+        <script>
+
+            window.onload = function(){
+                var colorField = document.getElementById('color');
+
+                /**
+                 * 添加新选项的方式是使用选择框的 add() 方法。DOM 规定这个方法接受两个参数：
+                 * 要添加的新选项和将位于新选项之后的选项。如果想在列表的最后添加一个选项，应该将第二个参数设置为 null。
+                 *
+                 * 使用 Option 构造函数来创建新选项，这个构造函数是 DOM 出现之前就有的，一直遗留到现在。
+                 * Option 构造函数接受两个参数：文本（text）和值（value）；第二个参数可选。
+                 * 虽然这个构造函数会创建一个 Object 的实例，但兼容 DOM 的浏览器会返回一个 <option> 元素。
+                 */
+                var newOption = new Option("GREEN", "3");
+                colorField.add(newOption, undefined);
+
+                /**
+                 * 移除选项的方式是使用选择框的 remove()方法。这个方法接受一个参数，即要移除选项的索引。
+                 * 也可以将相应选项设置为 null。这种方式也是 DOM 出现之前浏览器的遗留机制。
+                 * 要清除选择框中所有的项，需要迭代所有选项并逐个移除它们。
+                 */
+                colorField.remove(0);
+                colorField.options[0] = null;
+            };
+
+        </script>
+    </head>
+	<body>
+        <select name="color" id="color">
+            <option value="0">RED</option>
+            <option value="1">YELLOW</option>
+            <option value="2">BLUE</option>
+        </select>
+    </body>
+
+</html>

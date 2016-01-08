@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<meta http-equiv="Content-Type" charset="utf-8" >
+    <!--
+    为了在将表单提交到服务器之前验证数据，HTML5 新增了一些功能。
+    有了这些功能，即便 JavaScript 被禁用或者由于种种原因未能加载，也可以确保基本的验证。
+    换句话说，浏览器自己会根据标记中的规则执行验证，然后自己显示适当的错误消息（完全不用 JavaScript 插手）。
+    -->
+	<head>
+        <title>H5</title>
+    </head>
+	<body>
+        <!-- 要在 HTML 标记中为特定的字段指定一些约束，然后浏览器才会自动执行表单验证。-->
+        <form id="form" action="#">
+            <!--
+            required 属性
+
+            任何标注有 required 的字段，在提交表单时都不能空着。
+            这个属性适用于 <input>、 <textarea> 和 <select> 字段。
+            -->
+            Code<input type="text" id="code" name="code" required />
+            <br/>
+            <!--
+            HTML5 为 <input> 元素的 type 属性又增加了几个值。
+
+            这些新的类型不仅能反映数据类型的信息，而且还能提供一些默认的验证功能。
+            其中，"email"和"url"是两个得到支持最多的类型，各浏览器也都为它们增加了定制的验证机制。
+            "email" 类型要求输入的文本必须符合电子邮件地址的模式，而"url"类型要求输入的文本必须符合 URL 的模式。
+            -->
+            Email <input type="email" id="email" />
+            <br/>
+            URL<input type="url" id="url" />
+            <br/>
+            <!--
+            HTML5 为文本字段新增了 pattern 属性。
+
+            这个属性的值是一个正则表达式，用于匹配文本框中的值。
+            例如，如果只想允许在文本字段中输入数值，可以像下面的代码一样应用约束：
+            -->
+            Number<input type="text" pattern="\d+" name="count">
+            <br/>
+            <input type="submit" name='submit-btn' value="Submit Now!" />
+        </form>
+        <br/>
+        <script>
+            /**
+             * 使用 checkValidity() 方法可以检测表单中的某个字段是否有效。
+             *
+             * 所有表单字段都有个方法，如果字段的值有效，这个方法返回 true，否则返回 false。
+             * 字段的值是否有效的判断依据是前面介绍过的那些约束。
+             * 换句话说，必填字段中如果没有值就是无效的，而字段中的值与 pattern 属性不匹配也是无效的。
+             */
+
+            var form = document.getElementById('form');
+            var codeFiled = form[0];
+
+            form.onsubmit = function () {
+                if (codeFiled.checkValidity()) {
+                    console.log('code OK');
+                }
+
+                // 要检测整个表单是否有效，可以在表单自身调用 checkValidity()方法。
+                // 如果所有表单字段都有效，这个方法返回 true；即使有一个字段无效，这个方法也会返回 false。
+                if (form.checkValidity()) {
+                    console.log('form OK');
+                }
+            };
+        </script>
+    </body>
+
+</html>

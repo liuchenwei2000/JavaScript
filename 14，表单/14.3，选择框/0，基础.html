@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<meta http-equiv="Content-Type" charset="utf-8" >
+	<head>
+        <title>Select Field</title>
+        <script>
+            /**
+             * 选择框是通过 <select> 和 <option> 元素创建的。为了方便与这个控件交互，
+             * 除了所有表单字段共有的属性和方法外，HTMLSelectElement 类型还提供了下列属性和方法：
+             *
+             * add(newOption, relOption)：向控件中插入新 <option> 元素，其位置在相关项（relOption）之前。
+             * remove(index)：移除给定位置的选项。
+             * options：控件中所有 <option> 元素的 HTMLCollection。
+             * selectedIndex：基于 0 的选中项的索引，如果没有选中项，则值为-1。对于支持多选的控件，只保存选中项中第一项的索引。
+             * multiple：布尔值，表示是否允许多项选择；等价于 HTML 中的 multiple 特性。
+             * size：选择框中可见的行数；等价于 HTML 中的 size 特性。
+             *
+             * 选择框的 type 属性不是"select-one"，就是"select-multiple"，这取决于 HTML 代码中有没有 multiple 特性。
+             *
+             * 选择框的 value 属性由当前选中项决定，相应规则如下：
+             *
+             * 1，如果没有选中的项，则选择框的 value 属性保存空字符串。
+             * 2，如果有一个选中项，而且该项的 value 特性已经在 HTML 中指定，则选择框的 value 属性等于选中项的 value 特性。
+             * 即使 value 特性的值是空字符串，也同样遵循此条规则。
+             * 3，如果有一个选中项，但该项的 value 特性在 HTML 中未指定，则选择框的 value 属性等于该项的文本。
+             * 4，如果有多个选中项，则选择框的 value 属性将依据前两条规则取得第一个选中项的值。
+             */
+
+            window.onload = function(){
+                var colorField = document.getElementById('color');
+
+                /**
+                 * 在 DOM 中，每个 <option> 元素都有一个 HTMLOptionElement 对象表示。
+                 * 为便于访问数据，HTMLOptionElement 对象添加了下列属性：
+                 *
+                 * index：当前选项在 options 集合中的索引。
+                 * label：当前选项的标签；等价于 HTML 中的 label 特性。
+                 * selected：布尔值，表示当前选项是否被选中。将这个属性设置为 true 可以选中当前选项。
+                 * text：选项的文本。
+                 * value：选项的值（等价于 HTML 中的 value 特性）。
+                 *
+                 * 其中大部分属性的目的，都是为了方便对选项数据的访问。
+                 */
+                var option1 = colorField.options[0];
+                console.log(option1.text);
+                console.log(option1.selected);
+                console.log(option1.value);
+            };
+
+        </script>
+    </head>
+	<body>
+        <select name="color" id="color">
+            <option value="0">RED</option>
+            <option value="1">YELLOW</option>
+            <option value="2">BLUE</option>
+            <option value="">GREEN</option>
+            <option>WHITE</option>
+        </select>
+    </body>
+
+</html>

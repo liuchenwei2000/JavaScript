@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<meta http-equiv="Content-Type" charset="utf-8" >
+	<head>
+        <title>Select Field</title>
+        <script>
+
+            window.onload = function(){
+                var colorField = document.getElementById('color');
+                // 对于只允许选择一项的选择框，访问选中项的最简单方式，就是使用选择框的 selectedIndex 属性。
+                var selectedIndex = colorField.selectedIndex;
+                var selectedOption = colorField.options[selectedIndex];
+
+                console.log("Selected index: " + selectedIndex + "\nSelected text: " +
+                        selectedOption.text + "\nSelected value: " + selectedOption.value);
+
+                /**
+                 * 另一种选择选项的方式，就是取得对某一项的引用，然后将其 selected 属性设置为 true。
+                 *
+                 * 在允许多选的选择框中设置选项的 selected 属性，不会取消对其他选中项的选择，因而可以动态选中任意多个项。
+                 * 但是，如果是在单选选择框中，修改某个选项的 selected 属性则会取消对其他选项的选择。
+                 * 需要注意的是，将 selected 属性设置为 false 对单选选择框没有影响。
+                 */
+                colorField.options[2].selected = true;
+            };
+
+            /**
+             * selected 属性的作用主要是确定用户选择了选择框中的哪一项。
+             * 要取得所有选中的项，可以循环遍历选项集合，然后测试每个选项的 selected 属性。
+             */
+            function getSelectedOptions(selectBox) {
+                var selected = [];
+                var length = selectBox.options.length;
+
+                for (var i = 0; i > length; i++) {
+                    var option = selectBox.options[i];
+                    if (option.selected) {
+                        selected.push(option);
+                    }
+                }
+                return selected;
+            }
+
+        </script>
+    </head>
+	<body>
+        <select name="color" id="color">
+            <option value="0">RED</option>
+            <option value="1">YELLOW</option>
+            <option value="2">BLUE</option>
+            <option value="">GREEN</option>
+            <option>WHITE</option>
+        </select>
+    </body>
+
+</html>
