@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<meta http-equiv="Content-Type" charset="utf-8" >
+	<head>
+        <title>Input Field</title>
+    </head>
+	<body>
+        <form id="form" action="#">
+            <input type="text" id="code" name="code" size="20" value="0001" maxlength="500" />
+            <br/>
+            <textarea type="text" id="message" name="message" rows="10" cols="20" >
+                Some message here
+            </textarea>
+            <br/>
+            <input type="submit" name='submit-btn' value="Submit Now!" />
+        </form>
+        <br/>
+
+        <script>
+            /**
+             * 两种文本框都支持 select()方法，这个方法用于选择文本框中的所有文本。
+             * 在调用 select() 方法时，大多数浏览器（Opera 除外）都会将焦点设置到文本框中。
+             * 这个方法不接受参数，可以在任何时候被调用。
+             */
+
+            var form = document.getElementById('form');
+            var codeFiled = form[0];
+
+            // 在文本框获得焦点时选择其所有文本，这是一种非常常见的做法，特别是在文本框包含默认值的时候。
+            // 因为这样做可以让用户不必一个一个地删除文本。
+            codeFiled.onfocus = function () {
+                codeFiled.select();
+            };
+
+            // 与 select()方法对应的，是一个 select 事件。在选择了文本框中的文本时，就会触发 select 事件。
+            form[1].onselect = function(){
+                alert("selected");
+            };
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<meta http-equiv="Content-Type" charset="utf-8" >
+	<head>
+        <title>Common Methods</title>
+        <script>
+
+            /**
+             * 每个表单字段都有两个方法：focus()和 blur()。
+             *
+             * 其中，focus()方法用于将浏览器的焦点设置到表单字段，即激活表单字段，使其可以响应键盘事件。
+             * 例如，接收到焦点的文本框会显示插入符号，随时可以接收输入。
+             * 使用 focus()方法，可以将用户的注意力吸引到页面中的某个部位。
+             */
+            window.onload = function () {
+                var form = document.getElementById('form');
+                // 如果第一个表单字段是一个<input>元素，且其 type 特性的值为"hidden"，那么以上代码会导致错误。
+                // 另外，如果使用 CSS 的 display 和 visibility 属性隐藏了该字段，同样也会导致错误。
+                if (form[0].autofocus !== true) {
+                    form[0].focus();
+                }
+                // 与 focus()方法相对的是 blur()方法，它的作用是从元素中移走焦点。
+                // 在调用 blur()方法时，并不会把焦点转移到某个特定的元素上；仅仅是将焦点从调用这个方法的元素上面移走而已。
+                // form[0].blur();
+            };
+        </script>
+    </head>
+	<body>
+        <form id="form" action="#">
+            <!--
+            HTML5 为表单字段新增了一个 autofocus 属性。
+            在支持这个属性的浏览器中，只要设置这个属性，不用 JavaScript 就能自动把焦点移动到相应字段。
+            -->
+            <input type="text" id="code" name="code" autofocus />
+            <br/>
+            <input type="text" id="message" name="message" />
+            <br/>
+            <input type="submit" name='submit-btn' value="Submit Now!" />
+        </form>
+        <br/>
+	</body>
+
+</html>

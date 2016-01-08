@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<meta http-equiv="Content-Type" charset="utf-8" >
+	<head>
+        <title>Common Attributes</title>
+        <script>
+
+            /**
+             * 除了 <fieldset> 元素之外，所有表单字段都拥有相同的一组属性。
+             * 由于 <input> 类型可以表示多种表单字段，因此有些属性只适用于某些字段，但还有一些属性是所有字段所共有的。
+             *
+             * 表单字段共有的属性如下：
+             * disabled：布尔值，表示当前字段是否被禁用。
+             * form：指向当前字段所属表单的指针；只读。
+             * name：当前字段的名称。
+             * readOnly：布尔值，表示当前字段是否只读。
+             * tabIndex：表示当前字段的切换（tab）序号。
+             * type：当前字段的类型，如"checkbox"、"radio"等。
+             * value：当前字段将被提交给服务器的值。对文件字段来说，这个属性是只读的，包含着文件在计算机中的路径。
+             */
+            window.onload = function () {
+                // 除了 form 属性之外，可以通过 JavaScript 动态修改其他任何属性。
+                // 能够动态修改表单字段属性，意味着可以在任何时候，以任何方式来动态操作表单。
+                var form = document.getElementById('form');
+                var field = form[0];
+
+                console.log(field.form == form);
+                field.value = 'new value';
+                field.disabled = true;
+
+                /**
+                 * 解决重复提交问题：在第一次提交后就禁用提交按钮。
+                 *
+                 * 事件触发后，代码取得了提交按钮并将其 disabled 属性设置为 true。
+                 * 注意，不能通过 onclick 事件处理程序来实现这个功能，原因是不同浏览器之间存在“时差”：
+                 * 有的浏览器会在触发表单的 submit 事件之前触发 click 事件，而有的浏览器则相反。
+                 * 对于先触发 click 事件的浏览器，意味着会在提交发生之前禁用按钮，结果永远都不会提交表单。
+                 * 因此，最好是通过 submit 事件来禁用提交按钮。
+                 */
+                form.onsubmit = function(event){
+                    var submitBtn = event.target.elements['submit-btn'];
+                    submitBtn.disabled = true;
+                };
+            };
+        </script>
+    </head>
+	<body>
+        <form id="form" action="#">
+            <input type="text" id="code" name="code" />
+            <br/>
+            <input type="text" id="message" name="message" />
+            <br/>
+            <ul>
+                <li><input type="radio" name="color" value="red">Red</li>
+                <li><input type="radio" name="color" value="green">Green</li>
+                <li><input type="radio" name="color" value="blue">Blue</li>
+            </ul>
+            <br/>
+            <input type="submit" name='submit-btn' value="Submit Now!" />
+        </form>
+        <br/>
+	</body>
+
+</html>

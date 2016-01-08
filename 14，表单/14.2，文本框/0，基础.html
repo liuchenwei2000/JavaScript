@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<meta http-equiv="Content-Type" charset="utf-8" >
+	<head>
+        <title>Input Field</title>
+    </head>
+	<body>
+        <!--
+        在 HTML 中，有两种方式来表现文本框：
+        一种是使用 <input> 元素的单行文本框，另一种是使用 <textarea> 的多行文本框。
+        这两个控件非常相似，而且多数时候的行为也差不多。不过，它们之间仍然存在一些重要的区别。
+        -->
+        <form id="form" action="#">
+            <!--
+            必须将 <input> 元素的 type 特性设置为"text"。
+            设置 size 属性，可以指定文本框中能够显示的字符数。
+            设置 value 属性，可以设置文本框的初始值。
+            设置 maxlength 属性则用于指定文本框可以接受的最大字符数。
+            -->
+            <input type="text" id="code" name="code" size="20" value="0001" maxlength="500" />
+            <br/>
+            <!--
+            <textarea> 元素则始终会呈现为一个多行文本框。要指定文本框的大小，可以使用 rows 和 cols 特性。
+            其中，rows 特性指定的是文本框的字符行数，而 cols 特性指定的是文本框的字符列数（类似于<inpu>元素的 size 特性）。
+            与 <input> 元素不同， <textarea> 的初始值必须要放在 <textarea> 和 </textarea> 之间。
+            另一个与 <input> 的区别在于，不能在 HTML 中给 <textarea> 指定最大字符数。
+            -->
+            <textarea type="text" id="message" name="message" rows="10" cols="20" >
+                Some message here
+            </textarea>
+            <br/>
+            <input type="submit" name='submit-btn' value="Submit Now!" />
+        </form>
+        <br/>
+
+        <script>
+
+            var form = document.getElementById('form');
+            var codeFiled = form[0];
+
+            form.onsubmit = function () {
+                // 无论这两种文本框在标记中有什么区别，但它们都会将用户输入的内容保存在 value 属性中。
+                // 可以通过这个属性读取和设置文本框的值，而不建议使用标准的 DOM 方法。
+                var codeField = document.getElementById('code');
+                console.log("code=" + codeField.value);
+
+                var messageField = document.getElementById('message');
+                console.log("message=" + messageField.value);
+            };
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,44 @@
+<!-- 重置表单：在用户单击重置按钮时，表单会被重置。-->
+<!DOCTYPE html>
+<html>
+	<meta http-equiv="Content-Type" charset="utf-8" >
+	<head>
+        <title>Reset Form</title>
+    </head>
+	<body>
+        <!--
+        使用 type 特性值为"reset"的 <input> 或 <button> 都可以创建重置按钮。
+
+        在重置表单时，所有表单字段都会恢复到页面刚加载完毕时的初始值。
+        如果某个字段的初始值为空，就会恢复为空；而带有默认值的字段，也会恢复为默认值。
+
+        用户单击重置按钮重置表单时，会触发 reset 事件。利用这个机会，可以在必要时取消重置操作。
+        -->
+        <form id="form" action="#" method="POST">
+            <input type="text" id="code" name="code" />
+            <br/>
+            <input type="text" id="name" name="name" value="Your name" />
+            <br/>
+            <input type="submit" value="Submit Now!" />
+            <input type="reset" value="Reset" />
+        </form>
+        <br/>
+        <script>
+            var form = document.getElementById('form');
+
+            form.onreset = function () {
+                alert("Reset starts...");
+            };
+
+            // 也可以通过 JavaScript 来重置表单，与调用 submit()方法不同：
+            // 调用 reset()方法会像单击重置按钮一样触发 reset 事件。
+            // form.reset();
+
+            /**
+             * 事实上，重置表单的需求是很少见的。
+             * 更常见的做法是提供一个取消按钮，让用户能够回到前一个页面，而不是不分青红皂白地重置表单中的所有值。
+             */
+        </script>
+	</body>
+
+</html>

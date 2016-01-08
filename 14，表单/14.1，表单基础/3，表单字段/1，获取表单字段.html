@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<meta http-equiv="Content-Type" charset="utf-8" >
+	<head>
+        <title>Form Fields</title>
+    </head>
+	<body>
+        <!--
+        可以像访问页面中的其他元素一样，使用原生 DOM 方法访问表单元素。
+        此外，每个表单都有 elements 属性，该属性是表单中所有表单元素（字段）的集合。
+        这个 elements 集合是一个有序列表，其中包含着表单中的所有字段，
+        例如 <input>、 <textarea>、 <button>和 <fieldset>。
+        每个表单字段在 elements 集合中的顺序，与它们出现在标记中的顺序相同，可以按照位置或 name 属性来访问它们。
+        -->
+        <form id="form" action="#" method="POST">
+            <input type="text" id="code" name="code" />
+            <br/>
+            <input type="text" id="message" name="message" />
+            <br/>
+            <ul>
+                <li><input type="radio" name="color" value="red">Red</li>
+                <li><input type="radio" name="color" value="green">Green</li>
+                <li><input type="radio" name="color" value="blue">Blue</li>
+            </ul>
+            <br/>
+            <input type="submit" value="Submit Now!" />
+        </form>
+        <br/>
+        <script>
+            var form = document.getElementById('form');
+
+            // 获取表单中包含字段的数量
+            console.log(form.elements.length);
+            // 获取表单的第一个字段
+            var code = form.elements[0];
+            console.log(code.id);
+            // 获取表单中名为 name 的字段
+            var message = form.elements['message'];
+            console.log(message.id);
+            // 如果有多个表单控件都在使用一个 name（如单选按钮），那么就会返回以该 name 命名的一个 NodeList。
+            var colorFields = form.elements["color"];
+            console.log(colorFields.length);
+
+            var firstColorField = colorFields[0];
+            console.log(firstColorField.value);
+        </script>
+	</body>
+
+</html>

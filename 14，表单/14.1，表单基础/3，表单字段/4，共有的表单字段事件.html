@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<meta http-equiv="Content-Type" charset="utf-8" >
+	<head>
+        <title>Common Events</title>
+        <script>
+
+            /**
+             * 除了支持鼠标、键盘、更改和 HTML 事件之外，所有表单字段都支持下列 3 个事件。
+             *
+             * focus：当前字段获得焦点时触发。
+             * blur：当前字段失去焦点时触发。
+             * change：对于 <input> 和 <textarea> 元素，在它们失去焦点且 value 值改变时触发；
+             * 对于<select>元素，在其选项改变时触发。
+             *
+             * 当用户改变了当前字段的焦点，或者 JS 调用了 blur()或 focus()方法时，都可以触发 blur 和 focus 事件。
+             * 这两个事件在所有表单字段中都是相同的。但是， change 事件在不同表单控件中触发的次数会有所不同。
+             * 对于 <input> 和 <textarea> 元素，当它们从获得焦点到失去焦点且 value 值改变时，才会触发 change 事件。
+             * 对于 <select> 元素，只要用户选择了不同的选项，就会触发 change 事件；换句话说，不失去焦点也会触发 change 事件。
+             *
+             * 通常，可以使用 focus 和 blur 事件来以某种方式改变用户界面，
+             * 要么是向用户给出视觉提示，要么是向界面中添加额外的功能。
+             * 而 change 事件则经常用于验证用户在字段中输入的数据。
+             */
+            window.onload = function () {
+                var form = document.getElementById('form');
+                var codeFiled = form[0];
+
+                codeFiled.onfocus = function (event) {
+                    event.target.style.backgroundColor = 'pink';
+                };
+                // 关于 blur 和 change 事件的关系，并没有严格的规定。
+                // 在某些浏览器中， blur 事件会先于 change 事件发生；而在其他浏览器中，则恰好相反。
+                codeFiled.onblur = function (event) {
+                    event.target.style.backgroundColor = 'white';
+                };
+                codeFiled.onchange = function (event) {
+                    event.target.style.backgroundColor = 'white';
+                };
+            };
+        </script>
+    </head>
+	<body>
+        <form id="form" action="#">
+            <input type="text" id="code" name="code" />
+            <br/>
+            <input type="text" id="message" name="message" />
+            <br/>
+            <input type="submit" name='submit-btn' value="Submit Now!" />
+        </form>
+        <br/>
+	</body>
+
+</html>
