@@ -1,4 +1,4 @@
-## Ajax 与 Comet ##
+## Ajax ##
 
 Ajax = Asynchronous JavaScript and XML（异步的 JavaScript 和 XML）。
 
