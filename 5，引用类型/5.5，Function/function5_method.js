@@ -24,16 +24,16 @@ function callSum1(num1, num2) {
 }
 
 function callSum2(num1, num2) {
-	return sum.apply(this, [ num1, num2 ]);// 传入 数组
+	return sum.apply(this, [num1, num2]);// 传入 数组
 }
 
 function callSum3(num1, num2) {
 	return sum.call(this, num1, num2);// 逐一传入所有参数
 }
 
-console.console.log("callSum1(1,2)="+callSum1(1,2));
-console.console.log("callSum2(1,2)="+callSum2(1,2));
-console.console.log("callSum3(1,2)="+callSum3(1,2));
+console.console.log("callSum1(1,2)=" + callSum1(1, 2));
+console.console.log("callSum2(1,2)=" + callSum2(1, 2));
+console.console.log("callSum3(1,2)=" + callSum3(1, 2));
 
 /**
  * 传递参数并非 apply() 和 call() 真正的用武之地，它们真正强大的地方是能够扩充函数赖以运行的作用域。
