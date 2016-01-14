@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<!--
+JavaScript 和 CSS 也是非常紧密相关的：他们都是 HTML 之上的层次，因此常常一起使用。
+CSS 和 JavaScript 也可能会过于紧密地耦合在一起。最常见的例子是使用 JavaScript 来更改某些样式。
+-->
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div id="mydiv">Hello World</div>
+
+    <!--
+    由于 CSS 负责页面的显示，当显示出现任何问题时都应该只是查看 CSS 文件来解决。
+    然而，当使用了 JavaScript 来更改某些样式的时候，比如颜色，就出现了第二个可能已更改和必须检查的地方。
+    结果是 JavaScript 也在某种程度上负责了页面的显示，并与 CSS 紧密耦合了。
+    如果未来需要更改样式表，CSS 和 JavaScript 文件可能都需要修改。
+    这就给开发人员造成了维护上的噩梦。所以在这两个层次之间必须有清晰的划分。
+    -->
+    <script type="text/javascript">
+
+        var div = document.getElementById('mydiv');
+        // CSS 对 JavaScript 的紧密耦合
+        div.style.backgroundColor = 'blue';
+        div.style.color = 'red';
+    </script>
+</body>
+</html>

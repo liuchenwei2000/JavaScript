@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<!--
+现代 Web 应用常常要使用 JavaScript 来更改样式，所以虽然不可能完全将 CSS 和 JavaScript 解耦，
+但是还是能让耦合更松散的，这是通过动态更改样式类而非特定样式来实现的。
+-->
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .default {
+            background-color : blue;
+            color : red;
+        }
+    </style>
+</head>
+<body>
+    <div id="mydiv">Hello World</div>
+
+    <!--
+    通过只修改某个元素的 CSS 类，就可以让大部分样式信息严格保留在 CSS 中。
+    JavaScript 可以更改样式类，但并不会直接影响到元素的样式。
+    只要应用了正确的类，那么任何显示问题都可以直接追溯到 CSS 而非 JavaScript。
+    -->
+    <script type="text/javascript">
+
+        var div = document.getElementById('mydiv');
+        // CSS 对 JavaScript 的松散耦合
+        div.className = "default";
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<!--
+一种最常见的耦合类型是 HTML/JavaScript 耦合。
+
+在 Web 上，HTML 和 JavaScript 各自代表了解决方案中的不同层次：HTML 是数据，JavaScript 是行为。
+因为它们天生就需要交互，所以有多种不同的方法将这两个技术关联起来。
+
+直接写在 HTML 中的 JavaScript，使用包含内联代码的 <script> 元素或者是使用 HTML 属性来分配事件处理程序，都是过于紧密的耦合。
+-->
+<head>
+    <meta charset="UTF-8">
+    <!-- 使用了 <script> 紧密耦合了 HTML/JavaScript -->
+    <script type="text/javascript">
+        function doSomething(){
+            alert("OK");
+        }
+    </script>
+</head>
+<body>
+    <!-- 使用事件处理程序属性值紧密耦合了 HTML/JavaScript -->
+    <input type="button" value="Click Me" onclick="doSomething()" />
+</body>
+</html>

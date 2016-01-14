@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<!--
+理想情况是，HTML 和 JavaScript 应该完全分离，并通过外部文件和使用 DOM 附加行为来包含 JavaScript。
+当 HTML 和 JS 过于紧密的耦合在一起时，出现 JS 错误时就要先判断错误是出现在 HTML 部分还是在 JS 文件中。
+
+将 HTML 和 JavaScript 解耦可以在调试过程中节省时间，更加容易确定错误的来源，也减轻维护的难度：
+更改行为只需要在 JavaScript 文件中进行，而更改标记则只要在渲染文件（HTML、JSP等）中。
+-->
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <!-- 使用 DOM 附加行为为按钮添加事件处理程序 -->
+    <input type="button" id="btn" value="Click Me" />
+    <!-- 使用外部文件 -->
+    <script src="JS_new.js"></script>
+</body>
+</html>
