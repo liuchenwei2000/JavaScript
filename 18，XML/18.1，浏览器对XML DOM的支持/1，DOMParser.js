@@ -1,6 +1,6 @@
 
 /**
- * 为了将 XML 解析为 DOM 文档，浏览器引入了 DOMParser 对象。
+ * 为了将 XML 解析为 DOM 文档，浏览器引入了 DOMParser 类型。
  *
  * 在解析 XML 之前，首先必须创建一个 DOMParser 的实例，然后再调用 parseFromString() 方法。
  * 这个方法接受两个参数：要解析的 XML 字符串和内容类型（内容类型始终都应该是"text/xml"）。

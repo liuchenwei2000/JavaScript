@@ -1,6 +1,6 @@
 
 /**
- * XMLSerializer 对象可以将 DOM 文档序列化为 XML 字符串。
+ * XMLSerializer 类型可以将 DOM 文档序列化为 XML 字符串。
  *
  * 要序列化 DOM 文档，首先必须创建 XMLSerializer 的实例，
  * 然后将文档传入其 serializeToString () 方法，
