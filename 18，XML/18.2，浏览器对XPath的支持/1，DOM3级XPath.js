@@ -21,3 +21,13 @@
  * 在给定的上下文中，基于特定的命名空间信息来对 XPath 表达式求值。剩下的参数指定如何返回结果。
  */
 
+var result = xmldom.evaluate("employee/name", xmldom.documentElement, null,
+    XPathResult.ORDERED_NODE_ITERATOR_TYPE, null);
+
+if (result !== null) {
+    var node = result.iterateNext();
+    while (node) {
+        console.log(node.tagName);
+        node = node.iterateNext();
+    }
+}
