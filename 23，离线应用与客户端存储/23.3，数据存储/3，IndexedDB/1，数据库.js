@@ -17,7 +17,7 @@
  * 总之，调用 indexDB.open() 会返回一个 IDBRequest 对象，在这个对象上可以添加 onerror 和 onsuccess 事件处理程序。
  */
 
-var indexedDB = window.indexedDB || window.msIndexedDB || window.mozIndexedDB || window.webkitIndexedDB;
+var indexedDB = window.indexedDB;
 
 var request = indexedDB.open("test");
 var database = null;

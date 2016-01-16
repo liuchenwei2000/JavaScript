@@ -1,5 +1,5 @@
 
-var indexedDB = window.indexedDB || window.msIndexedDB || window.mozIndexedDB || window.webkitIndexedDB;
+var indexedDB = window.indexedDB;
 
 var request = indexedDB.open("test");
 var database = null;
@@ -75,7 +75,7 @@ users.add({
 
 users.get("007").onsuccess = function (event) {
     var user = event.target.result;
-    console.log(user);
+    console.log(JSON.stringify(user));
 };
 
 
