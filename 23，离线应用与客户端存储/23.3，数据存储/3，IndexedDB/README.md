@@ -7,3 +7,11 @@ IndexedDB 设计的操作完全是**异步**进行的。因此，大多数操作
 在得到完整支持的情况下，IndexedDB 将是一个作为 API 宿主的全局对象。由于 API 仍然可能有变化，浏览器也都使用提供商前缀，因此这个对象在 IE10 中叫 msIndexedDB，在Firefox 4 中叫 mozIndexedDB，在 Chrome 中叫 webkitIndexedDB。所以为了兼容性，需要以下面的方式获取 IndexedDB 对象：
 	
 	var indexedDB = window.indexedDB || window.msIndexedDB || window.mozIndexedDB || window.webkitIndexedDB;
+
+### 限制
+
+对 IndexedDB 的限制很多都与对 Web Storage 的类似。
+
+首先，IndexedDB 数据库只能由同源（相同协议、域名和端口）页面操作，因此不能跨域共享信息。换句话说，www.google.com 与 map.google.com 的数据库是完全独立的。
+
+其次，每个来源的数据库占用的磁盘空间也有限制，一般都在 5MB 左右。
