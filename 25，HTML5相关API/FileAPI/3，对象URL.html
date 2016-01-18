@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+	/**
+	 * 对象 URL 也被称为 Blob URL，指的是引用保存在 File 或 Blob 中数据的 URL。
+	 * 使用对象 URL 的好处是可以不必把文件内容读取到 JavaScript 中而直接使用文件内容。
+	 * 为此，只要在需要文件内容的地方提供对象 URL 即可。
+	 */
+	window.onload = function () {
+		var pdiv = document.getElementById("picture");
+		var imageInput = document.getElementById("image");
+
+		var oldUrl = null;
+		var url = null;
+
+		imageInput.onchange = function (event) {
+			oldUrl = url;
+			var files = event.target.files;
+			/**
+			 * 要创建对象 URL，可以使用 window.URL.createObjectURL()方法，并传入 File 或 Blob 对象。
+			 * 这个函数的返回值是一个字符串，指向一块内存的地址。因为这个字符串是 URL，所以在 DOM 中能使用。
+			 *
+			 * 直接把对象 URL 放在 <img> 标签中，就省去了把数据先读到 JavaScript 中的麻烦。
+			 * 另一方面，<img> 标签则会找到相应的内存地址，直接读取数据并将图像显示在页面中。
+			 */
+			url = window.URL.createObjectURL(files[0]);
+			var html = "<img src=\"" + url + "\">";
+			pdiv.innerHTML = html;
+
+			/**
+			 * 如果不再需要相应的数据，最好释放它占用的内容。
+			 * 但只要有代码在引用对象 URL，内存就不会释放。
+			 * 要手工释放内存，可以把对象 URL 传给 window.URL.revokeOjbectURL()。
+			 *
+			 * 页面卸载时会自动释放对象 URL 占用的内存。不过，为了确保尽可能少地占用内存，
+			 * 最好在不需要某个对象 URL 时，就马上手工释放其占用的内存。
+			 */
+			window.URL.revokeObjectURL(oldUrl);
+		};
+	};
+</script>
+</head>
+<body>
+	Image:<input type="file" id="image" accept="image/jpeg">
+	<div id="picture"></div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+	/**
+	 * FileReader 类型实现的是一种异步文件读取机制。
+	 *
+	 * 可以把 FileReader 想象成 XMLHttpRequest，区别只是它读取的是文件系统，而不是远程服务器。
+	 * 为了读取文件中的数据，FileReader 提供了如下几个方法:
+	 *
+	 * readAsText(file,encoding)
+	 * 以纯文本形式读取文件，将读取到的文本保存在 result 属性中。第二个参数用于指定编码类型，是可选的。
+	 *
+	 * readAsDataURL(file)
+	 * 读取文件并将文件以数据 URI 的形式保存在 result 属性中。
+	 *
+	 * readAsBinaryString(file)
+	 * 读取文件并将一个字符串保存在 result 属性中，字符串中的每个字符表示一字节。
+	 *
+	 * readAsArrayBuffer(file)
+	 * 读取文件并将一个包含文件内容的 ArrayBuffer 保存在 result 属性中。
+	 */
+	window.onload = function(){
+		var div = document.getElementById("text");
+		var fileInput = document.getElementById("file");
+
+		fileInput.onchange = function(event){
+			var files = event.target.files;
+			var reader = new FileReader();
+			reader.readAsText(files[0]);
+
+			/**
+			 * 由于读取过程是异步的，因此 FileReader 也提供了几个事件。
+			 * 其中最有用的三个事件是 progress、 error 和 load，分别表示
+			 * 是否又读取了新数据、是否发生了错误以及是否已经读完了整个文件。
+			 *
+			 * 如果想中断读取过程，可以调用 abort()方法，这样就会触发 abort 事件。
+			 * 在触发 load、 error 或 abort 事件后，会触发另一个事件 loadend。
+			 * loadend 事件发生就意味着已经读取完整个文件，或者读取时发生了错误，或者读取过程被中断。
+			 */
+			reader.onerror = function(){
+				// 错误码表示如下：
+				// 1 表示未找到文件
+				// 2 表示安全性错误
+				// 3 表示读取中断
+				// 4 表示文件不可读
+				// 5 表示编码错误
+				div.innerHTML = "Could not read file, error code is " + reader.error.code;
+			};
+			reader.onprogress = function(event){
+				if (event.lengthComputable){
+					div.innerHTML = event.loaded + "/" + event.total;
+				}
+			};
+			reader.onload = function(){
+				div.innerHTML = reader.result;
+			};
+		};
+
+		var pdiv = document.getElementById("picture");
+		var imageInput = document.getElementById("image");
+
+		imageInput.onchange = function(event){
+			var files = event.target.files;
+			var reader = new FileReader();
+			// 对于图像文件就把它保存为数据 URI
+			reader.readAsDataURL(files[0]);
+
+			reader.onerror = function(){
+				pdiv.innerHTML = "Could not read file, error code is " + reader.error.code;
+			};
+			reader.onload = function(){
+				// 在页面中将图像显示出来
+				var html = "<img src=\"" + reader.result + "\">";
+				pdiv.innerHTML = html;
+			};
+		};
+	};
+</script>
+</head>
+<body>
+	File:<input type="file" id="file" accept="text/html,text/plain">
+	<div id="text"></div>
+	Image:<input type="file" id="image" accept="image/jpeg">
+	<div id="picture"></div>
+</body>
+</html>
