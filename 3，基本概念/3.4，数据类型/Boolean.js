@@ -20,6 +20,8 @@ if(true) {
  * 	Number						任何非零数值（包括无穷大）		    0和NaN
  * 	Object						任何对象							null
  * 	Undefined					不适用						    undefined
+ *
+ * 	实际上，只有下面六个值会被当做 false：false、null、undefined、空字符串''、数字0、数字NaN
  */ 
 var result = Boolean("hello");
 

@@ -24,6 +24,8 @@ console.log("s1[2]=" + s1[2]);
  * \unnnn 以十六进制代码nnnn表示一个Unicode字符，n为0-F。
  */ 
 
+console.log("\u0041");// A
+
 var s3 = "hello \"world\"\n";
 
 // 任何字符串的长度都可以通过访问其 length 属性取得。
