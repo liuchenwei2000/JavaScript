@@ -38,3 +38,22 @@ for (var key in sessionStorage) {
 // 要从 sessionStorage 中删除数据，可以使用 delete 操作符删除对象属性，也可调用 removeItem() 方法
 sessionStorage.removeItem("name");
 delete sessionStorage.book;
+
+// 因为 Storage 类型只能存储字符串，所以非字符串的数据在存储之前往往会先转换成字符串
+// 下面是一个存储 JSON 对象和 数组对象的例子
+var json = {
+	code: "T001",
+	name: "Tom Hanks",
+	message: "Hello Oscar"
+};
+
+sessionStorage.setItem("person", JSON.stringify(json));
+var json2 = JSON.parse(sessionStorage.getItem("person"));
+console.log(json2.code + ", " + json2.name + ", " + json2.message);
+
+
+var colors = ["RED", "YELLOW", "GREEN"];
+
+sessionStorage.setItem("colors", JSON.stringify(colors));
+var colors2 = JSON.parse(sessionStorage.getItem("colors"));
+console.log(colors2[0]);
