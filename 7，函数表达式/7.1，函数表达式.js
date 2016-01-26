@@ -36,3 +36,45 @@ var f = createFunction();
 f();
 // 也可以这样调用
 createFunction()();
+
+/**
+ * 立即调用的函数表达式（IIFE：Immediately Invoked Function Expression）
+ */
+
+// IIFE 的一般形式如下
+(function () {
+	/* code */
+}());
+
+// 和普通函数执行的时候传参数一样，自执行的函数表达式也可以这么传参数
+(function (j) {
+	/* code */
+}(jQuery));
+
+// 因为闭包直接可以引用传入的参数，利用这些被锁住的传入参数，自执行函数表达式可以有效地保存状态。
+
+// 这是一个反例，这种实现方式并不能保存状态
+var fns = [];
+
+for (var i = 0; i < 5; i++) {
+	fns.push(function () {
+		console.log(i);
+	});
+}
+
+fns[0]();// 5
+fns[1]();// 5
+
+// 闭包实现
+var fns2 = [];
+
+for (var i = 0; i < 5; i++) {
+	fns2.push((function (i) {
+		return function () {
+			console.log(i);
+		};
+	}(i)));
+}
+
+fns2[0]();// 0
+fns2[1]();// 1
