@@ -21,7 +21,7 @@
 var myObject = {
 	greeting: " World",
 	/*
-	 * 方法可以使用 this 访问自己所属的恩对象，所以它能从对象中取值或对对象进行修改。
+	 * 方法可以使用 this 访问自己所属的对象，所以它能从对象中取值或对对象进行修改。
 	 * this 到对象的绑定，发生在调用的时候，这使得函数可以对 this 高度复用。
 	 */
 	sayHi: function () {
@@ -63,7 +63,7 @@ myObject.bad();
  */
 myObject.good = function () {
 
-	// 在方法中定义一个变量比给它赋值为 this，那么内部函数就可以通过该变量访问到 this。
+	// 在方法中定义一个变量给它赋值为 this，那么内部函数就可以通过该变量访问到 this。
 	var that = this;
 
 	var helper = function () {

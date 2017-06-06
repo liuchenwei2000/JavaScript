@@ -1,5 +1,5 @@
 
-// 函数声明语法定义函数
+// 1，函数声明语法定义函数
 
 function sum(num1, num2) {
 	return num1 + num2;
